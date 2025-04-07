@@ -67,13 +67,13 @@
     </attribute>
 
     <attribute name="functiontype" type="int" set="1" get="1" size="1">
-      <description>sets the function decorralation type [init=0:min=0:max=21:step=1]
+      <description>sets the function modulation type [init=0:min=0:max=21:step=1]
         <br />
         <br />
         Possible functions from 0 to 21 correspond to : 
         <br />
         x, x^2, sin, log(1+x), sqrt(x), 1-cos(Pi/2*x), (1-cos(Pi*x))/2, 1-(1-x)^2, composite1, x^3, 1-(1-x)^3, composite2, x^4, 1-(1-x)^4, composite3, x^5, 1-(1-x)^5, composite4, 2^(10(x-1)), composite5, 1-sqrt(1-x^2), sqrt(1-(x-1)^2).</description>
-      <digest>sets the function decorralation type</digest>
+      <digest>sets the function modulation type</digest>
     </attribute>
 
     <attribute name="distributionmode" type="int" set="1" get="1" size="1">
