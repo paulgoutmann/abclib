@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, -778.0, 766.0, 670.0 ],
+		"rect" : [ 156.0, 118.0, 766.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1012,7 +1012,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 296.0, 188.0, 50.0, 22.0 ],
-													"text" : "7."
+													"text" : "10.2"
 												}
 
 											}
@@ -4079,7 +4079,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, -752.0, 766.0, 644.0 ],
+						"rect" : [ 156.0, 144.0, 766.0, 644.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5028,6 +5028,26 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgmode" : 0,
+									"border" : 1,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-8",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "abc.scopeembedded.maxpat",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 197.0, 361.0, 150.0, 150.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"args" : [ "@text", "abc.hoa.ringmod~ object in fx mode apply ring modulation to spatial components already created by encoders or maps for instance at a given ambisonic order N. Each spatial component is modulates and the frequency of the modulators are driven by a 'factor' parameter." ],
 									"bgmode" : 0,
 									"border" : 0,
@@ -5095,7 +5115,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 204.0, 513.0, 137.0, 47.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Output gain in dB and\nnumbers of the outputs in the inspector menu"
 								}
 
@@ -5130,7 +5149,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 337.0, 231.0, 106.0, 22.0 ],
+									"patching_rect" : [ 356.0, 226.0, 106.0, 22.0 ],
 									"text" : "r -------commentbg"
 								}
 
@@ -5143,7 +5162,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 337.0, 266.0, 378.0, 47.0 ],
+									"patching_rect" : [ 356.0, 261.0, 378.0, 47.0 ],
 									"text" : "@f0 [0, 10000] sets the maximum modulation frequency in hertz\n@factor [0., 1.] sets the initial decorrelation factor \n@functiontype [0, 21] sets the distribution used to spread frequency"
 								}
 
@@ -5157,7 +5176,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 337.0, 343.0, 370.0, 127.0 ],
+									"patching_rect" : [ 356.0, 338.0, 370.0, 127.0 ],
 									"text" : "The number of spatial components at order N in ambisonics 2D \nis P = 2*N+1. The outputs are the P modulate signals associated to spatial components.\n\nA coefficient is associated to each spatial component (1-(i+1)/P). \nIf the factor is greater than this threshold the ith frequency of modulation is (i+1)*f0/P, else 0. The maximum modulation frequency of the modulator f0 is in hertz (defautl value 10, minimum 0, maximum 10000)."
 								}
 
@@ -5190,7 +5209,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 224.5, 338.0, 104.0, 22.0 ],
+									"patching_rect" : [ 197.642883999999981, 334.0, 104.0, 22.0 ],
 									"text" : "abc.hoa.scope~ 1"
 								}
 
@@ -5314,27 +5333,6 @@
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 7.0, 158.0, 40.0, 22.0 ],
 									"text" : "*~ 0.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "@drawing-type", 1, "@size", 1.0, "@display", 0 ],
-									"bgmode" : 0,
-									"border" : 1,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-19",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "abc.scope.maxpat",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 224.0, 369.0, 90.0, 110.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -5522,7 +5520,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -5585,7 +5583,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 16.5, 319.75, 234.0, 319.75 ],
+									"midpoints" : [ 16.5, 319.75, 207.142883999999981, 319.75 ],
 									"order" : 0,
 									"source" : [ "obj-44", 0 ]
 								}
@@ -5858,7 +5856,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "abc.scope.maxpat",
+				"name" : "abc.scopeembedded.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
 				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",

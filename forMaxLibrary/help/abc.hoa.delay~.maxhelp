@@ -150,6 +150,26 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgmode" : 0,
+									"border" : 1,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-5",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "abc.scopeembedded.maxpat",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 41.0, 347.5, 150.0, 150.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 0.996078431372549, 0.984313725490196, 0.984313725490196, 0.0 ],
 									"bubble" : 1,
 									"bubble_bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
@@ -172,7 +192,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 203.0, 606.0, 137.0, 47.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Output gain in dB and\nnumbers of the outputs in the inspector menu"
 								}
 
@@ -199,7 +218,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 535.0, 55.0, 412.0, 74.0 ],
-									"presentation_linecount" : 5,
 									"text" : "@deltime [2., 10000.] sets the maximum delay in milliseconds \n@feedback [0., 0.999] sets the feedback of the delays\n@window [10., 1000.] sets the duration of interpolation in milliseconds for changing delays \n@mode [syn/fx] sets the mode of processes"
 								}
 
@@ -214,7 +232,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 535.0, 138.0, 358.0, 87.0 ],
-									"presentation_linecount" : 6,
 									"text" : "If we are at order N in ambisonics, the number of spatial components is P = 2*N+1.\n\nThe P delays are equally spread between deltime/N and deltime which the maximum delay in milliseconds (H0 => deltime/N, H-1 & H1 => 2*deltime/N, etc., H-N & HN => deltime)."
 								}
 
@@ -510,7 +527,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 97.0, 483.0, 24.0, 24.0 ]
+									"patching_rect" : [ 97.0, 515.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -531,7 +548,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 97.0, 515.0, 90.0, 22.0 ],
+									"patching_rect" : [ 97.0, 547.0, 90.0, 22.0 ],
 									"text" : "directangles $1"
 								}
 
@@ -545,27 +562,6 @@
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 14.0, 198.0, 40.0, 22.0 ],
 									"text" : "*~ 0.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "@drawing-type", 1, "@size", 1.0, "@display", 0 ],
-									"bgmode" : 0,
-									"border" : 1,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-19",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "abc.scope.maxpat",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 87.0, 358.0, 90.0, 110.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -715,7 +711,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 87.0, 325.0, 104.0, 22.0 ],
+									"patching_rect" : [ 41.0, 320.0, 104.0, 22.0 ],
 									"text" : "abc.hoa.scope~ 1"
 								}
 
@@ -728,7 +724,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 35.0, 483.0, 24.0, 24.0 ]
+									"patching_rect" : [ 35.0, 515.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -749,7 +745,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 515.0, 59.0, 22.0 ],
+									"patching_rect" : [ 35.0, 547.0, 59.0, 22.0 ],
 									"text" : "stereo $1"
 								}
 
@@ -770,7 +766,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 15.0, 606.0, 190.0, 33.0 ],
+									"patching_rect" : [ 15.0, 620.0, 190.0, 33.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -782,7 +778,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 15.0, 573.0, 189.0, 22.0 ],
+									"patching_rect" : [ 15.0, 590.0, 189.0, 22.0 ],
 									"text" : "abc.hoa.decoder~ 1 @speakers 4"
 								}
 
@@ -804,7 +800,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 203.0, 427.0, 75.0, 110.0 ],
+									"patching_rect" : [ 203.0, 459.0, 75.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1213,7 +1209,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-64", 0 ],
-									"midpoints" : [ 23.5, 317.5, 96.5, 317.5 ],
+									"midpoints" : [ 23.5, 317.5, 50.5, 317.5 ],
 									"order" : 0,
 									"source" : [ "obj-44", 0 ]
 								}
@@ -1236,7 +1232,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-54", 1 ],
-									"midpoints" : [ 44.5, 546.25, 194.5, 546.25 ],
+									"midpoints" : [ 44.5, 580.25, 194.5, 580.25 ],
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -1274,7 +1270,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-54", 1 ],
-									"midpoints" : [ 212.5, 545.75, 194.5, 545.75 ],
+									"midpoints" : [ 212.5, 579.75, 194.5, 579.75 ],
 									"source" : [ "obj-57", 0 ]
 								}
 
@@ -1295,7 +1291,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
+									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-64", 0 ]
 								}
 
@@ -1310,7 +1306,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-54", 1 ],
-									"midpoints" : [ 106.5, 547.25, 194.5, 547.25 ],
+									"midpoints" : [ 106.5, 580.25, 194.5, 580.25 ],
 									"source" : [ "obj-67", 0 ]
 								}
 
@@ -1558,112 +1554,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patcher" : 									{
-										"fileversion" : 1,
-										"appversion" : 										{
-											"major" : 8,
-											"minor" : 6,
-											"revision" : 4,
-											"architecture" : "x64",
-											"modernui" : 1
-										}
-,
-										"classnamespace" : "box",
-										"rect" : [ 59.0, 119.0, 640.0, 480.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
-										"default_fontname" : "Arial",
-										"gridonopen" : 1,
-										"gridsize" : [ 15.0, 15.0 ],
-										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
-										"boxes" : [ 											{
-												"box" : 												{
-													"hidden" : 1,
-													"id" : "obj-80",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 122.0, 51.0, 22.0 ],
-													"text" : "pcontrol"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"hidden" : 1,
-													"id" : "obj-79",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 90.0, 230.0, 22.0 ],
-													"text" : "load 1.abc.2d.general.ambisonics.maxpat"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"comment" : "",
-													"id" : "obj-20",
-													"index" : 1,
-													"maxclass" : "inlet",
-													"numinlets" : 0,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
-												}
-
-											}
- ],
-										"lines" : [ 											{
-												"patchline" : 												{
-													"destination" : [ "obj-79", 0 ],
-													"source" : [ "obj-20", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-80", 0 ],
-													"hidden" : 1,
-													"source" : [ "obj-79", 0 ]
-												}
-
-											}
- ]
-									}
-,
-									"patching_rect" : [ 314.0, 698.0, 71.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"description" : "",
-										"digest" : "",
-										"globalpatchername" : "",
-										"tags" : ""
-									}
-,
-									"text" : "p gotopatch"
+									"patching_rect" : [ 314.0, 698.0, 103.0, 22.0 ],
+									"text" : "abc.gotoambtopic"
 								}
 
 							}
@@ -2821,6 +2713,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "abc.gotoambtopic.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "abc.help.description.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
 				"patcherrelativepath" : "../misc/others",
@@ -2898,7 +2797,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "abc.scope.maxpat",
+				"name" : "abc.scopeembedded.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
 				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
