@@ -714,7 +714,6 @@
 					}
 ,
 					"patching_rect" : [ 61.0, 100.0, 90.0, 22.0 ],
-					"presentation_linecount" : 6,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

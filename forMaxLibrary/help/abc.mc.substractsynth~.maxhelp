@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 764.0, 720.0 ],
+		"rect" : [ 100.0, 100.0, 956.0, 720.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,68 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 6,
+							"revision" : 4,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 0.0, 26.0, 956.0, 694.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 2,
+						"assistshowspatchername" : 0,
+						"boxes" : [  ],
+						"lines" : [  ]
+					}
+,
+					"patching_rect" : [ 71.0, 235.0, 25.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p ?"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-40",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +119,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 764.0, 694.0 ],
+						"rect" : [ 0.0, 26.0, 956.0, 694.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -321,7 +383,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-68",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -471,7 +532,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 764.0, 694.0 ],
+						"rect" : [ 0.0, 26.0, 956.0, 694.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -666,7 +727,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-86",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -679,7 +739,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-87",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -858,7 +917,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-46",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -871,7 +929,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-43",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1435,7 +1492,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 764.0, 694.0 ],
+						"rect" : [ 100.0, 126.0, 956.0, 694.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1703,7 +1760,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-85",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1716,7 +1772,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-84",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -2460,7 +2515,8 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"toolbaradditions" : [ "lessonbrowser" ]
 	}
 
 }
