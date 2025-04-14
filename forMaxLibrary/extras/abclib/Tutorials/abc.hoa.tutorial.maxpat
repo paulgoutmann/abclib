@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 0.0, 66.0, 1307.0, 803.0 ],
+		"rect" : [ 0.0, 66.0, 1183.0, 803.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 26.0, 1183.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1106,7 +1106,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 26.0, 1183.0, 777.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -2642,7 +2642,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 26.0, 1183.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3624,7 +3624,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 26.0, 1183.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4387,21 +4387,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"library_path0" : "/Users/goutmann/Documents/Max 8/Packages/faustgen/externals/msp/faustgen~.mxo/Contents/Resources/",
-									"machinecode" : "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cy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvc3RkZmF1c3QubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL3NpZ25hbHMubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL21hdGhzLmxpYiIsIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcy9iYXNpY3MubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL3JvdXRlcy5saWIiXSwiaW5jbHVkZV9wYXRobmFtZXMiOiBbIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcyIsIi9zaGFyZS9mYXVzdCIsIi91c3IvbG9jYWwvc2hhcmUvZmF1c3QiLCIvdXNyL3NoYXJlL2ZhdXN0IiwiLiJdLCJzaXplIjogMzYsImlucHV0cyI6IDQsIm91dHB1dHMiOiA0LCJzcl9pbmRleCI6IDMyLCJtZXRhIjogWyB7ICJhdXRob3IiOiAiQWxhaW4gQm9uYXJkaSwgUGF1bCBHb3V0bWFubiwgRGF2aWQgRmllcnJvICYgQWRyaWVuIFphbm5pIiB9LHsgImJhc2ljcy5saWIvbmFtZSI6ICJGYXVzdCBCYXNpYyBFbGVtZW50IExpYnJhcnkiIH0seyAiYmFzaWNzLmxpYi90YWJ1bGF0ZU5kIjogIkNvcHlyaWdodCAoQykgMjAyMyBCYXJ0IEJyb3VucyA8YmFydF9tYWduZXRvcGhvbi5ubD4iIH0seyAiYmFzaWNzLmxpYi92ZXJzaW9uIjogIjEuMTkuMSIgfSx7ICJjb21waWxlX29wdGlvbnMiOiAiLWxhbmcgbGx2bSAxNS4wLjcgLWN0IDEgLWVzIDEgLW1jZCAxNiAtbWRkIDEwMjQgLW1keSAzMyAtZG91YmxlIC1mdHogMCIgfSx7ICJmaWxlbmFtZSI6ICJmYXVzdGdlbi0yIiB9LHsgImxpY2VuY2UiOiAiTEdQTHYzIiB9LHsgIm1hdGhzLmxpYi9hdXRob3IiOiAiR1JBTUUiIH0seyAibWF0aHMubGliL2NvcHlyaWdodCI6ICJHUkFNRSIgfSx7ICJtYXRocy5saWIvbGljZW5zZSI6ICJMR1BMIHdpdGggZXhjZXB0aW9uIiB9LHsgIm1hdGhzLmxpYi9uYW1lIjogIkZhdXN0IE1hdGggTGlicmFyeSIgfSx7ICJtYXRocy5saWIvdmVyc2lvbiI6ICIyLjguMCIgfSx7ICJuYW1lIjogImFiY18yZF92ZWN0b3JzMyIgfSx7ICJyb3V0ZXMubGliL25hbWUiOiAiRmF1c3QgU2lnbmFsIFJvdXRpbmcgTGlicmFyeSIgfSx7ICJyb3V0ZXMubGliL3ZlcnNpb24iOiAiMS4yLjAiIH0seyAic2lnbmFscy5saWIvbmFtZSI6ICJGYXVzdCBTaWduYWwgUm91dGluZyBMaWJyYXJ5IiB9LHsgInNpZ25hbHMubGliL3ZlcnNpb24iOiAiMS42LjAiIH1dLCJ1aSI6IFsgeyJ0eXBlIjogImhncm91cCIsImxhYmVsIjogInZlY3RvclZFIiwiaXRlbXMiOiBbIHsidHlwZSI6ICJ2Z3JvdXAiLCJsYWJlbCI6ICJhbmdsZXMiLCJpdGVtcyI6IFsgeyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEwIiwic2hvcnRuYW1lIjogImEwIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EwIiwiaW5kZXgiOiAwLCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9LHsidHlwZSI6ICJuZW50cnkiLCJsYWJlbCI6ICJhMSIsInNob3J0bmFtZSI6ICJhMSIsImFkZHJlc3MiOiAiL3ZlY3RvclZFL2FuZ2xlcy9hMSIsImluZGV4IjogOCwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiA5MCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEyIiwic2hvcnRuYW1lIjogImEyIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EyIiwiaW5kZXgiOiAxNiwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiAxODAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9LHsidHlwZSI6ICJuZW50cnkiLCJsYWJlbCI6ICJhMyIsInNob3J0bmFtZSI6ICJhMyIsImFkZHJlc3MiOiAiL3ZlY3RvclZFL2FuZ2xlcy9hMyIsImluZGV4IjogMjQsIm1ldGEiOiBbeyAidW5pdCI6ICJkZWciIH1dLCJpbml0IjogMjcwLCJtaW4iOiAtMzYwLCJtYXgiOiAzNjAsInN0ZXAiOiAxfV19XX1dfQAAAAAAAJQAAAAKAABskAAAAAoAAF0cAAAAAQAAbBgAAAABAABdCAIYHAgCkAGUAQAAAAAAAIgKAAAOAQAAAAAAAAAAAAABAAAADgIAAIAEAAAAAAAAggoAAA4CAACABAAAAAAAAGUKAAAPAQAAEAAAAAAAAAAbCgAADwEAAAAAAAAAAAAAVwoAAA8BAAAkAAAAAAAAAA0KAAAPAQAAFAAAAAAAAAB0CgAADwEAABgAAAAAAAAAQwoAAA8BAAAEAAAAAAAAACsKAAAPAQAACAAAAAAAAAD9CQAAAQAAAAAAAAAAAAAAAF97Im5hbWUiOiAiYWJjXzJkX3ZlY3RvcnMzIiwiZmlsZW5hbWUiOiAiZmF1c3RnZW4tMiIsInZlcnNpb24iOiAiMi43NS43IiwiY29tcGlsZV9vcHRpb25zIjogIi1sYW5nIGxsdm0gMTUuMC43IC1jdCAxIC1lcyAxIC1tY2QgMTYgLW1kZCAxMDI0IC1tZHkgMzMgLWRvdWJsZSAtZnR6IDAiLCJsaWJyYXJ5X2xpc3QiOiBbIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcy9zdGRmYXVzdC5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvc2lnbmFscy5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvbWF0aHMubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL2Jhc2ljcy5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvcm91dGVzLmxpYiJdLCJpbmNsdWRlX3BhdGhuYW1lcyI6IFsiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzIiwiL3NoYXJlL2ZhdXN0IiwiL3Vzci9sb2NhbC9zaGFyZS9mYXVzdCIsIi91c3Ivc2hhcmUvZmF1c3QiLCIuIl0sInNpemUiOiAzNiwiaW5wdXRzIjogNCwib3V0cHV0cyI6IDQsInNyX2luZGV4IjogMzIsIm1ldGEiOiBbIHsgImF1dGhvciI6ICJBbGFpbiBCb25hcmRpLCBQYXVsIEdvdXRtYW5uLCBEYXZpZCBGaWVycm8gJiBBZHJpZW4gWmFubmkiIH0seyAiYmFzaWNzLmxpYi9uYW1lIjogIkZhdXN0IEJhc2ljIEVsZW1lbnQgTGlicmFyeSIgfSx7ICJiYXNpY3MubGliL3RhYnVsYXRlTmQiOiAiQ29weXJpZ2h0IChDKSAyMDIzIEJhcnQgQnJvdW5zIDxiYXJ0X21hZ25ldG9waG9uLm5sPiIgfSx7ICJiYXNpY3MubGliL3ZlcnNpb24iOiAiMS4xOS4xIiB9LHsgImNvbXBpbGVfb3B0aW9ucyI6ICItbGFuZyBsbHZtIDE1LjAuNyAtY3QgMSAtZXMgMSAtbWNkIDE2IC1tZGQgMTAyNCAtbWR5IDMzIC1kb3VibGUgLWZ0eiAwIiB9LHsgImZpbGVuYW1lIjogImZhdXN0Z2VuLTIiIH0seyAibGljZW5jZSI6ICJMR1BMdjMiIH0seyAibWF0aHMubGliL2F1dGhvciI6ICJHUkFNRSIgfSx7ICJtYXRocy5saWIvY29weXJpZ2h0IjogIkdSQU1FIiB9LHsgIm1hdGhzLmxpYi9saWNlbnNlIjogIkxHUEwgd2l0aCBleGNlcHRpb24iIH0seyAibWF0aHMubGliL25hbWUiOiAiRmF1c3QgTWF0aCBMaWJyYXJ5IiB9LHsgIm1hdGhzLmxpYi92ZXJzaW9uIjogIjIuOC4wIiB9LHsgIm5hbWUiOiAiYWJjXzJkX3ZlY3RvcnMzIiB9LHsgInJvdXRlcy5saWIvbmFtZSI6ICJGYXVzdCBTaWduYWwgUm91dGluZyBMaWJyYXJ5IiB9LHsgInJvdXRlcy5saWIvdmVyc2lvbiI6ICIxLjIuMCIgfSx7ICJzaWduYWxzLmxpYi9uYW1lIjogIkZhdXN0IFNpZ25hbCBSb3V0aW5nIExpYnJhcnkiIH0seyAic2lnbmFscy5saWIvdmVyc2lvbiI6ICIxLjYuMCIgfV0sInVpIjogWyB7InR5cGUiOiAiaGdyb3VwIiwibGFiZWwiOiAidmVjdG9yVkUiLCJpdGVtcyI6IFsgeyJ0eXBlIjogInZncm91cCIsImxhYmVsIjogImFuZ2xlcyIsIml0ZW1zIjogWyB7InR5cGUiOiAibmVudHJ5IiwibGFiZWwiOiAiYTAiLCJzaG9ydG5hbWUiOiAiYTAiLCJhZGRyZXNzIjogIi92ZWN0b3JWRS9hbmdsZXMvYTAiLCJpbmRleCI6IDAsIm1ldGEiOiBbeyAidW5pdCI6ICJkZWciIH1dLCJpbml0IjogMCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImExIiwic2hvcnRuYW1lIjogImExIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2ExIiwiaW5kZXgiOiA4LCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDkwLCJtaW4iOiAtMzYwLCJtYXgiOiAzNjAsInN0ZXAiOiAxfSx7InR5cGUiOiAibmVudHJ5IiwibGFiZWwiOiAiYTIiLCJzaG9ydG5hbWUiOiAiYTIiLCJhZGRyZXNzIjogIi92ZWN0b3JWRS9hbmdsZXMvYTIiLCJpbmRleCI6IDE2LCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDE4MCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEzIiwic2hvcnRuYW1lIjogImEzIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EzIiwiaW5kZXgiOiAyNCwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiAyNzAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9XX1dfV19AF9fX3NpbmNvc19zdHJldABfZGVzdHJveW15ZHNwAF9jbGFzc0luaXRteWRzcABfaW5zdGFuY2VDb25zdGFudHNteWRzcABfaW5zdGFuY2VDbGVhcm15ZHNwAF9jb21wdXRlbXlkc3AAX2FsbG9jYXRlbXlkc3AAX2dldEpTT05teWRzcABsdG1wMQBsdG1wMAAAAA==",
-									"machinecode_size" : 9400,
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "multichannelsignal", "", "" ],
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 623.0, 522.0, 81.0, 22.0 ],
-									"sample_format" : 1,
-									"serial_number" : "FXG2R2WQ4564 bits",
-									"sourcecode" : "//--------------------------------------------------------------------------------------//\n//----------------------------------------abclib----------------------------------------//\n//\n//-------------------------FAUST CODE AND UTILITIES FOR MIXED MUSIC---------------------//\n//\n//-------BY ALAIN BONARDI, PAUL GOUTMANN, DAVID FIERRO & ADRIEN ZANNI - 2019-2024 ------//\n//---------------------CICM - MUSIDANSE LABORATORY - PARIS 8 UNIVERSITY-----------------//\n//--------------------------------------------------------------------------------------//\n//\ndeclare author \"Alain Bonardi, Paul Goutmann, David Fierro & Adrien Zanni\";\ndeclare licence \"LGPLv3\";\ndeclare name \"abc_2d_vectors3\";\n//\nimport(\"stdfaust.lib\");\n//\n//\nabc_2d_vectors_ui(nls) = vectorVE(laz)\nwith {\n\ta(i, nls) = nentry(\"h:vectorVE/v:angles/a%i [unit:deg]\", i * 360 / nls, -360, 360, 1);\n\tlaz = par(i, nls, a(i, nls));\n};\n//\nvectorVE(laz) = thisVectorVE\nwith{\n\tp = outputs(laz);\n\tang(i) = ba.take(i+1, laz);\n\tlx(p) = par(i, p, * (cos((ang(i) + 90) / 180 * ma.PI)));\n\tly(p) = par(i, p, * (sin((ang(i) + 90) / 180 * ma.PI)));\n\tclip(mini,maxi) = min(maxi, max(mini, _));\n\tparSquare(p) = par(i, p, ^(2));\n\tsumOfSquare(p) = par(i, p, _ <: (*)) :> _ ;\n\tsimpleSum(p) = si.bus(p) :> _ ;\n\tzeroException =  _ <: (_ == (0)) * ma.MIN, _  : + ;\n\tvx(p) = si.bus(2*p+2) : par(i, 2, (lx(p):simpleSum(p))), si.bus(2):route(4,4, 1, 1, 2, 3, 3, 4, 4, 2) : /, / : clip(-1, 1), clip(-1,1);\n\tvy(p) = si.bus(2*p+2) : par(i, 2, (ly(p):simpleSum(p))), si.bus(2):route(4,4, 1, 1, 2, 3, 3, 4, 4, 2) : /, / : clip(-1, 1), clip(-1,1);\n\tthisVectorVE = si.bus(p) <: si.bus(p), (parSquare(p)<:si.bus(p), (simpleSum(p):zeroException)), (simpleSum(p):zeroException) <: vx(p), vy(p) : ro.interleave(2, 2);\n};\n//\nclip(low, high, x) = min(max(x, low), high);\n//\nprocess = abc_2d_vectors_ui(4);\n",
-									"sourcecode_size" : 1825,
-									"text" : "mc.faustgen~",
-									"varname" : "faustgen-5785170864",
-									"version" : "1.72"
+									"text" : "abc.vector~ 4",
+									"varname" : "faustgen-5174793776"
 								}
 
 							}
@@ -5075,21 +5067,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"library_path0" : "/Users/goutmann/Documents/Max 8/Packages/faustgen/externals/msp/faustgen~.mxo/Contents/Resources/",
-									"machinecode" : "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cy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvc3RkZmF1c3QubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL3NpZ25hbHMubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL21hdGhzLmxpYiIsIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcy9iYXNpY3MubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL3JvdXRlcy5saWIiXSwiaW5jbHVkZV9wYXRobmFtZXMiOiBbIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcyIsIi9zaGFyZS9mYXVzdCIsIi91c3IvbG9jYWwvc2hhcmUvZmF1c3QiLCIvdXNyL3NoYXJlL2ZhdXN0IiwiLiJdLCJzaXplIjogMzYsImlucHV0cyI6IDQsIm91dHB1dHMiOiA0LCJzcl9pbmRleCI6IDMyLCJtZXRhIjogWyB7ICJhdXRob3IiOiAiQWxhaW4gQm9uYXJkaSwgUGF1bCBHb3V0bWFubiwgRGF2aWQgRmllcnJvICYgQWRyaWVuIFphbm5pIiB9LHsgImJhc2ljcy5saWIvbmFtZSI6ICJGYXVzdCBCYXNpYyBFbGVtZW50IExpYnJhcnkiIH0seyAiYmFzaWNzLmxpYi90YWJ1bGF0ZU5kIjogIkNvcHlyaWdodCAoQykgMjAyMyBCYXJ0IEJyb3VucyA8YmFydF9tYWduZXRvcGhvbi5ubD4iIH0seyAiYmFzaWNzLmxpYi92ZXJzaW9uIjogIjEuMTkuMSIgfSx7ICJjb21waWxlX29wdGlvbnMiOiAiLWxhbmcgbGx2bSAxNS4wLjcgLWN0IDEgLWVzIDEgLW1jZCAxNiAtbWRkIDEwMjQgLW1keSAzMyAtZG91YmxlIC1mdHogMCIgfSx7ICJmaWxlbmFtZSI6ICJmYXVzdGdlbi0yIiB9LHsgImxpY2VuY2UiOiAiTEdQTHYzIiB9LHsgIm1hdGhzLmxpYi9hdXRob3IiOiAiR1JBTUUiIH0seyAibWF0aHMubGliL2NvcHlyaWdodCI6ICJHUkFNRSIgfSx7ICJtYXRocy5saWIvbGljZW5zZSI6ICJMR1BMIHdpdGggZXhjZXB0aW9uIiB9LHsgIm1hdGhzLmxpYi9uYW1lIjogIkZhdXN0IE1hdGggTGlicmFyeSIgfSx7ICJtYXRocy5saWIvdmVyc2lvbiI6ICIyLjguMCIgfSx7ICJuYW1lIjogImFiY18yZF92ZWN0b3JzMyIgfSx7ICJyb3V0ZXMubGliL25hbWUiOiAiRmF1c3QgU2lnbmFsIFJvdXRpbmcgTGlicmFyeSIgfSx7ICJyb3V0ZXMubGliL3ZlcnNpb24iOiAiMS4yLjAiIH0seyAic2lnbmFscy5saWIvbmFtZSI6ICJGYXVzdCBTaWduYWwgUm91dGluZyBMaWJyYXJ5IiB9LHsgInNpZ25hbHMubGliL3ZlcnNpb24iOiAiMS42LjAiIH1dLCJ1aSI6IFsgeyJ0eXBlIjogImhncm91cCIsImxhYmVsIjogInZlY3RvclZFIiwiaXRlbXMiOiBbIHsidHlwZSI6ICJ2Z3JvdXAiLCJsYWJlbCI6ICJhbmdsZXMiLCJpdGVtcyI6IFsgeyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEwIiwic2hvcnRuYW1lIjogImEwIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EwIiwiaW5kZXgiOiAwLCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9LHsidHlwZSI6ICJuZW50cnkiLCJsYWJlbCI6ICJhMSIsInNob3J0bmFtZSI6ICJhMSIsImFkZHJlc3MiOiAiL3ZlY3RvclZFL2FuZ2xlcy9hMSIsImluZGV4IjogOCwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiA5MCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEyIiwic2hvcnRuYW1lIjogImEyIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EyIiwiaW5kZXgiOiAxNiwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiAxODAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9LHsidHlwZSI6ICJuZW50cnkiLCJsYWJlbCI6ICJhMyIsInNob3J0bmFtZSI6ICJhMyIsImFkZHJlc3MiOiAiL3ZlY3RvclZFL2FuZ2xlcy9hMyIsImluZGV4IjogMjQsIm1ldGEiOiBbeyAidW5pdCI6ICJkZWciIH1dLCJpbml0IjogMjcwLCJtaW4iOiAtMzYwLCJtYXgiOiAzNjAsInN0ZXAiOiAxfV19XX1dfQAAAAAAAJQAAAAKAABskAAAAAoAAF0cAAAAAQAAbBgAAAABAABdCAIYHAgCkAGUAQAAAAAAAIgKAAAOAQAAAAAAAAAAAAABAAAADgIAAIAEAAAAAAAAggoAAA4CAACABAAAAAAAAGUKAAAPAQAAEAAAAAAAAAAbCgAADwEAAAAAAAAAAAAAVwoAAA8BAAAkAAAAAAAAAA0KAAAPAQAAFAAAAAAAAAB0CgAADwEAABgAAAAAAAAAQwoAAA8BAAAEAAAAAAAAACsKAAAPAQAACAAAAAAAAAD9CQAAAQAAAAAAAAAAAAAAAF97Im5hbWUiOiAiYWJjXzJkX3ZlY3RvcnMzIiwiZmlsZW5hbWUiOiAiZmF1c3RnZW4tMiIsInZlcnNpb24iOiAiMi43NS43IiwiY29tcGlsZV9vcHRpb25zIjogIi1sYW5nIGxsdm0gMTUuMC43IC1jdCAxIC1lcyAxIC1tY2QgMTYgLW1kZCAxMDI0IC1tZHkgMzMgLWRvdWJsZSAtZnR6IDAiLCJsaWJyYXJ5X2xpc3QiOiBbIi9Vc2Vycy9nb3V0bWFubi9Eb2N1bWVudHMvTWF4IDgvUGFja2FnZXMvZmF1c3RnZW4vZXh0ZXJuYWxzL21zcC9mYXVzdGdlbn4ubXhvL0NvbnRlbnRzL1Jlc291cmNlcy9zdGRmYXVzdC5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvc2lnbmFscy5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvbWF0aHMubGliIiwiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzL2Jhc2ljcy5saWIiLCIvVXNlcnMvZ291dG1hbm4vRG9jdW1lbnRzL01heCA4L1BhY2thZ2VzL2ZhdXN0Z2VuL2V4dGVybmFscy9tc3AvZmF1c3RnZW5+Lm14by9Db250ZW50cy9SZXNvdXJjZXMvcm91dGVzLmxpYiJdLCJpbmNsdWRlX3BhdGhuYW1lcyI6IFsiL1VzZXJzL2dvdXRtYW5uL0RvY3VtZW50cy9NYXggOC9QYWNrYWdlcy9mYXVzdGdlbi9leHRlcm5hbHMvbXNwL2ZhdXN0Z2Vufi5teG8vQ29udGVudHMvUmVzb3VyY2VzIiwiL3NoYXJlL2ZhdXN0IiwiL3Vzci9sb2NhbC9zaGFyZS9mYXVzdCIsIi91c3Ivc2hhcmUvZmF1c3QiLCIuIl0sInNpemUiOiAzNiwiaW5wdXRzIjogNCwib3V0cHV0cyI6IDQsInNyX2luZGV4IjogMzIsIm1ldGEiOiBbIHsgImF1dGhvciI6ICJBbGFpbiBCb25hcmRpLCBQYXVsIEdvdXRtYW5uLCBEYXZpZCBGaWVycm8gJiBBZHJpZW4gWmFubmkiIH0seyAiYmFzaWNzLmxpYi9uYW1lIjogIkZhdXN0IEJhc2ljIEVsZW1lbnQgTGlicmFyeSIgfSx7ICJiYXNpY3MubGliL3RhYnVsYXRlTmQiOiAiQ29weXJpZ2h0IChDKSAyMDIzIEJhcnQgQnJvdW5zIDxiYXJ0X21hZ25ldG9waG9uLm5sPiIgfSx7ICJiYXNpY3MubGliL3ZlcnNpb24iOiAiMS4xOS4xIiB9LHsgImNvbXBpbGVfb3B0aW9ucyI6ICItbGFuZyBsbHZtIDE1LjAuNyAtY3QgMSAtZXMgMSAtbWNkIDE2IC1tZGQgMTAyNCAtbWR5IDMzIC1kb3VibGUgLWZ0eiAwIiB9LHsgImZpbGVuYW1lIjogImZhdXN0Z2VuLTIiIH0seyAibGljZW5jZSI6ICJMR1BMdjMiIH0seyAibWF0aHMubGliL2F1dGhvciI6ICJHUkFNRSIgfSx7ICJtYXRocy5saWIvY29weXJpZ2h0IjogIkdSQU1FIiB9LHsgIm1hdGhzLmxpYi9saWNlbnNlIjogIkxHUEwgd2l0aCBleGNlcHRpb24iIH0seyAibWF0aHMubGliL25hbWUiOiAiRmF1c3QgTWF0aCBMaWJyYXJ5IiB9LHsgIm1hdGhzLmxpYi92ZXJzaW9uIjogIjIuOC4wIiB9LHsgIm5hbWUiOiAiYWJjXzJkX3ZlY3RvcnMzIiB9LHsgInJvdXRlcy5saWIvbmFtZSI6ICJGYXVzdCBTaWduYWwgUm91dGluZyBMaWJyYXJ5IiB9LHsgInJvdXRlcy5saWIvdmVyc2lvbiI6ICIxLjIuMCIgfSx7ICJzaWduYWxzLmxpYi9uYW1lIjogIkZhdXN0IFNpZ25hbCBSb3V0aW5nIExpYnJhcnkiIH0seyAic2lnbmFscy5saWIvdmVyc2lvbiI6ICIxLjYuMCIgfV0sInVpIjogWyB7InR5cGUiOiAiaGdyb3VwIiwibGFiZWwiOiAidmVjdG9yVkUiLCJpdGVtcyI6IFsgeyJ0eXBlIjogInZncm91cCIsImxhYmVsIjogImFuZ2xlcyIsIml0ZW1zIjogWyB7InR5cGUiOiAibmVudHJ5IiwibGFiZWwiOiAiYTAiLCJzaG9ydG5hbWUiOiAiYTAiLCJhZGRyZXNzIjogIi92ZWN0b3JWRS9hbmdsZXMvYTAiLCJpbmRleCI6IDAsIm1ldGEiOiBbeyAidW5pdCI6ICJkZWciIH1dLCJpbml0IjogMCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImExIiwic2hvcnRuYW1lIjogImExIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2ExIiwiaW5kZXgiOiA4LCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDkwLCJtaW4iOiAtMzYwLCJtYXgiOiAzNjAsInN0ZXAiOiAxfSx7InR5cGUiOiAibmVudHJ5IiwibGFiZWwiOiAiYTIiLCJzaG9ydG5hbWUiOiAiYTIiLCJhZGRyZXNzIjogIi92ZWN0b3JWRS9hbmdsZXMvYTIiLCJpbmRleCI6IDE2LCJtZXRhIjogW3sgInVuaXQiOiAiZGVnIiB9XSwiaW5pdCI6IDE4MCwibWluIjogLTM2MCwibWF4IjogMzYwLCJzdGVwIjogMX0seyJ0eXBlIjogIm5lbnRyeSIsImxhYmVsIjogImEzIiwic2hvcnRuYW1lIjogImEzIiwiYWRkcmVzcyI6ICIvdmVjdG9yVkUvYW5nbGVzL2EzIiwiaW5kZXgiOiAyNCwibWV0YSI6IFt7ICJ1bml0IjogImRlZyIgfV0sImluaXQiOiAyNzAsIm1pbiI6IC0zNjAsIm1heCI6IDM2MCwic3RlcCI6IDF9XX1dfV19AF9fX3NpbmNvc19zdHJldABfZGVzdHJveW15ZHNwAF9jbGFzc0luaXRteWRzcABfaW5zdGFuY2VDb25zdGFudHNteWRzcABfaW5zdGFuY2VDbGVhcm15ZHNwAF9jb21wdXRlbXlkc3AAX2FsbG9jYXRlbXlkc3AAX2dldEpTT05teWRzcABsdG1wMQBsdG1wMAAAAA==",
-									"machinecode_size" : 9400,
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "multichannelsignal", "", "" ],
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 11.0, 504.0, 81.0, 22.0 ],
-									"sample_format" : 1,
-									"serial_number" : "FXG2R2WQ4564 bits",
-									"sourcecode" : "//--------------------------------------------------------------------------------------//\n//----------------------------------------abclib----------------------------------------//\n//\n//-------------------------FAUST CODE AND UTILITIES FOR MIXED MUSIC---------------------//\n//\n//-------BY ALAIN BONARDI, PAUL GOUTMANN, DAVID FIERRO & ADRIEN ZANNI - 2019-2024 ------//\n//---------------------CICM - MUSIDANSE LABORATORY - PARIS 8 UNIVERSITY-----------------//\n//--------------------------------------------------------------------------------------//\n//\ndeclare author \"Alain Bonardi, Paul Goutmann, David Fierro & Adrien Zanni\";\ndeclare licence \"LGPLv3\";\ndeclare name \"abc_2d_vectors3\";\n//\nimport(\"stdfaust.lib\");\n//\n//\nabc_2d_vectors_ui(nls) = vectorVE(laz)\nwith {\n\ta(i, nls) = nentry(\"h:vectorVE/v:angles/a%i [unit:deg]\", i * 360 / nls, -360, 360, 1);\n\tlaz = par(i, nls, a(i, nls));\n};\n//\nvectorVE(laz) = thisVectorVE\nwith{\n\tp = outputs(laz);\n\tang(i) = ba.take(i+1, laz);\n\tlx(p) = par(i, p, * (cos((ang(i) + 90) / 180 * ma.PI)));\n\tly(p) = par(i, p, * (sin((ang(i) + 90) / 180 * ma.PI)));\n\tclip(mini,maxi) = min(maxi, max(mini, _));\n\tparSquare(p) = par(i, p, ^(2));\n\tsumOfSquare(p) = par(i, p, _ <: (*)) :> _ ;\n\tsimpleSum(p) = si.bus(p) :> _ ;\n\tzeroException =  _ <: (_ == (0)) * ma.MIN, _  : + ;\n\tvx(p) = si.bus(2*p+2) : par(i, 2, (lx(p):simpleSum(p))), si.bus(2):route(4,4, 1, 1, 2, 3, 3, 4, 4, 2) : /, / : clip(-1, 1), clip(-1,1);\n\tvy(p) = si.bus(2*p+2) : par(i, 2, (ly(p):simpleSum(p))), si.bus(2):route(4,4, 1, 1, 2, 3, 3, 4, 4, 2) : /, / : clip(-1, 1), clip(-1,1);\n\tthisVectorVE = si.bus(p) <: si.bus(p), (parSquare(p)<:si.bus(p), (simpleSum(p):zeroException)), (simpleSum(p):zeroException) <: vx(p), vy(p) : ro.interleave(2, 2);\n};\n//\nclip(low, high, x) = min(max(x, low), high);\n//\nprocess = abc_2d_vectors_ui(4);\n",
-									"sourcecode_size" : 1825,
-									"text" : "mc.faustgen~",
-									"varname" : "faustgen-6407112784",
-									"version" : "1.72"
+									"text" : "abc.vector~ 4",
+									"varname" : "faustgen-5174753472"
 								}
 
 							}
@@ -5233,16 +5217,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 116.5, 528.0, 96.5, 528.0, 96.5, 499.0, 20.5, 499.0 ],
+									"destination" : [ "obj-1", 1 ],
+									"midpoints" : [ 116.5, 528.0, 96.5, 528.0, 96.5, 499.0, 82.5, 499.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"midpoints" : [ 728.5, 546.0, 708.5, 546.0, 708.5, 517.0, 632.5, 517.0 ],
+									"destination" : [ "obj-20", 1 ],
+									"midpoints" : [ 728.5, 546.0, 708.5, 546.0, 708.5, 517.0, 694.5, 517.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -5349,7 +5333,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 26.0, 1183.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5657,7 +5641,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 92.0, 1307.0, 777.0 ],
+						"rect" : [ 0.0, 92.0, 1183.0, 777.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -5956,7 +5940,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 17.0, 350.0, 202.333328306674957, 191.999996110796928 ],
+									"patching_rect" : [ 16.833335846662521, 346.0, 202.333328306674957, 191.999996110796928 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 36.0, 319.0, 202.333327999999995, 191.99999600000001 ]
 								}
@@ -6084,7 +6068,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 236.0, 351.0, 202.333327999999995, 191.99999600000001 ],
+									"patching_rect" : [ 240.0, 351.000001999999995, 202.333327999999995, 191.99999600000001 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 326.0, 325.0, 202.333327999999995, 191.99999600000001 ]
 								}
@@ -6100,7 +6084,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 455.0, 351.0, 202.333327999999995, 191.99999600000001 ],
+									"patching_rect" : [ 455.0, 350.165839479270289, 202.333327999999995, 191.99999600000001 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 621.0, 325.0, 202.333327999999995, 191.99999600000001 ]
 								}
@@ -6966,7 +6950,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "jit_matrix" ],
 									"patching_rect" : [ 18.0, 346.0, 200.0, 200.331674958540646 ],
-									"pic" : "/Users/goutmann/Dropbox/UNIV_24_25/S2/MOUT/seance05/img/h0.png",
+									"pic" : "h0.png",
 									"presentation" : 1,
 									"presentation_rect" : [ 37.0, 316.0, 200.0, 200.331674958540646 ]
 								}
@@ -6982,7 +6966,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "jit_matrix" ],
 									"patching_rect" : [ 237.0, 347.0, 200.0, 200.0 ],
-									"pic" : "/Users/goutmann/Dropbox/UNIV_24_25/S2/MOUT/seance05/img/h-1.png",
+									"pic" : "h-1.png",
 									"presentation" : 1,
 									"presentation_rect" : [ 327.0, 322.0, 200.0, 200.0 ]
 								}
@@ -6998,7 +6982,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "jit_matrix" ],
 									"patching_rect" : [ 456.0, 347.0, 200.0, 200.0 ],
-									"pic" : "/Users/goutmann/Dropbox/UNIV_24_25/S2/MOUT/seance05/img/h1.png",
+									"pic" : "h1.png",
 									"presentation" : 1,
 									"presentation_rect" : [ 622.0, 320.0, 200.0, 200.0 ]
 								}
@@ -7365,6 +7349,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "abc.vector~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../../../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "abc_2d_decoder1_4~.mxo",
 				"type" : "iLaX"
 			}
@@ -7378,6 +7369,10 @@
 			}
 , 			{
 				"name" : "abc_2d_optim1~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "abc_2d_vectors4~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -7396,22 +7391,22 @@
 			}
 , 			{
 				"name" : "h-1.png",
-				"bootpath" : "~/Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
-				"patcherrelativepath" : "../../../../../../../Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/media/images",
+				"patcherrelativepath" : "../../../media/images",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "h0.png",
-				"bootpath" : "~/Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
-				"patcherrelativepath" : "../../../../../../../Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/media/images",
+				"patcherrelativepath" : "../../../media/images",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "h1.png",
-				"bootpath" : "~/Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
-				"patcherrelativepath" : "../../../../../../../Dropbox/UNIV_24_25/S2/MOUT/seance05/img",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/media/images",
+				"patcherrelativepath" : "../../../media/images",
 				"type" : "PNG",
 				"implicit" : 1
 			}
@@ -7442,10 +7437,6 @@
 				"patcherrelativepath" : "../../../media/images",
 				"type" : "PNG",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "mc.faustgen~.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "projection_trigonometrie.js",
