@@ -146,7 +146,7 @@ abc_2d_multiEncoder_ui(N, ns) = multiEncoder(N, ls, la, returntime)
 			//the speed of the ith source among p sources, expressed in turns by second for the end user
 			s(i, p) = nentry("v:multiencoder/h:speeds/s%i [unit:s-1]", 0, -100, 100, 0.001);
 			//the angle of the ith source among p sources, expressed in degrees for the end-user
-			a(i, p) = 1, nentry("v:multiencoder/h:angles/a%i [unit:deg]", i * 360 / p, -360, 360, 0.01) * ma.PI / 180.0 : abc_polar2cartesian : si.smoo, si.smoo : abc_cartesian2polar : !, _ ;
+			a(i, p) = nentry("v:multiencoder/h:angles/a%i [unit:deg]", i * 360 / p, -360, 360, 0.01) * ma.PI / 180.0 : abc_smoothedAngle ;
 			//the interpolation time between static position and rotation
 			returntime = hslider("v:multiencoder/returntime [unit:msec]", 20, 0, 1000, 1) * 0.001;
 			//ls = list of speeds//
@@ -697,7 +697,7 @@ abc_2d_syn_gain_ui(N) = synGain(N, lg)
 abc_2d_vbap_ui(n) = circularScaledVBAP(la, theta)
 	with {
 		a(i, nls) = nentry("v:vbap/a%i [unit:deg]", i * 360 / nls, -360, 360, 1);
-		theta = 1, nentry("v:vbap/theta [unit:deg]", 0, -360, 360, 0.01) / 180 * ma.PI : abc_polar2cartesian : si.smoo, si.smoo : abc_cartesian2polar : !, _ / ma.PI * 180 ;
+		theta = nentry("v:vbap/theta [unit:deg]", 0, -360, 360, 0.01) / 180 * ma.PI : abc_smoothedAngle : _ / ma.PI * 180 ;
 		//la = list of angles//
  		la = par(i, n, a(i, n));
 	};
@@ -1344,7 +1344,7 @@ abc_cartesian2polar = permutation <: (module, phase) with {
 	phase = atan2;
 };
 //
-
+abc_smoothedAngle = _ <: (sin, cos) : (si.smoo, si.smoo) : atan2 ;
 //
 //
 //
