@@ -122,3 +122,6 @@ function msg_float(value) {
     //post("msg_float: angle = " + angleInDegrees + "\n");
     mgraphics.redraw(); // Redessiner l'interface
 }
+
+function anything() {
+}

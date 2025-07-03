@@ -113,3 +113,5 @@ function poltocar(a, b){
 	
 	}
     
+function anything() {
+}

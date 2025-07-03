@@ -584,3 +584,6 @@ function set_ad(name, a, d){
         } else {post("Pas à l'échelle");}
     }
 }
+
+function anything() {
+}
