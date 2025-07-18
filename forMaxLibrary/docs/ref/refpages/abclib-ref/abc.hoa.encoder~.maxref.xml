@@ -4,11 +4,12 @@
 
 
 <c74object name="abc.hoa.encoder~" module="abclib">
-  <digest>Abclib's 2D High Order Ambisonics (HOA) Encoder</digest>
-  <description><o>abc.hoa.encoder~</o> is an 2D High Order Ambisonics (HOA) encoder.
-    <br />
-    <br />
-    This object enable to create punctual sources either in rotation at a certain speed or static and located at a precise angle (in degrees) on the ambisonic circle.</description>
+  <digest>Abclib's High Order Ambisonics (HOA) Encoder</digest>
+  <description><o>abc.hoa.encoder~</o> enables to create punctual sources either in rotation at a certain speed or static and located at a precise angle (in degrees). It is possible to encode a maximum of 8 sources in 2D or 3D. N varies between 1 and 7.<br /><br />
+  
+  For instance, at ambisonic order 3, 'abc.hoa.encoder~ 3 @sources 4' enables to encode 4 monophonic sources.<br />
+  The speeds (s0, s1, ...) of the sources in turns per second and the fixed angles (a0, a1, ...) in degrees (when the speeds equal 0), as well as the return time (it) in milliseconds are the control parameters.
+  </description>
 
     <!--INLETS-->
   <!-- <inletlist>
@@ -44,19 +45,34 @@
       <digest>sets the number of sources</digest>
     </attribute>
 
-    <!--<attribute name="dimension" type="int" set="1" get="1" size="1">
+    <attribute name="dimensions" type="int" set="1" get="1" size="1">
       <description>sets the number of dimensions [init=2:min=2:max=3:step=1].</description>
       <digest>sets the number of dimensions</digest>
-    </attribute>-->
+    </attribute>
 
     <attribute name="a[index]" type="float" set="1" get="1" size="1">
       <description>sets the angle of the [index]th encoded signal in degree.[index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-360:max=360:step=0.01].</description>
-      <digest>sets the angle of the encoded signal in degree</digest>
+      <digest>sets the azimut of the encoded signal in degree</digest>
+    </attribute>
+
+    <attribute name="e[index]" type="float" set="1" get="1" size="1">
+      <description>sets the elevation of the [index]th encoded signal in degree for 3D encoder.[index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-180:max=180:step=0.01].</description>
+      <digest>sets the elevation of the encoded signal in degree for 3D encoder</digest>
     </attribute>
 
     <attribute name="s[index]" type="float" set="1" get="1" size="1">
       <description>sets the rotation speed of the [index]th encoded signal in turn/s. [index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-100:max=100:step=0.001].</description>
-      <digest>sets the angle of the encoded signal in degree</digest>
+      <digest>sets the rotation speed of the encoded signal in degree for 2D encoder</digest>
+    </attribute>
+
+    <attribute name="sa[index]" type="float" set="1" get="1" size="1">
+      <description>sets the azimut rotation speed of the [index]th encoded signal in turn/s for 3D encoder. [index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-100:max=100:step=0.001].</description>
+      <digest>sets the azimut rotation speed of the encoded signal in degree for 3D encoder</digest>
+    </attribute>
+
+    <attribute name="se[index]" type="float" set="1" get="1" size="1">
+      <description>sets the elevation rotation speed of the [index]th encoded signal in turn/s for 3D encoder. [index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-100:max=100:step=0.001].</description>
+      <digest>sets the elevation rotation speed of the encoded signal in degree for 3D encoder</digest>
     </attribute>
 
     <attribute name="returntime" type="int" set="1" get="1" size="1">
@@ -67,19 +83,40 @@
 
   <!--MESSAGES-->
   <methodlist>
-    <method name="angle">
+    <method name="a[index]">
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>sets the angle of the encoded signal in degree [init=0:min=-360:max=360:step=0.01].</description>
+      <description>sets the angle of the [index]th encoded signal in degree.[index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-360:max=360:step=0.01].</description>
       <digest>sets the angle of the encoded signal in degree</digest>
     </method>
-    <method name="speed">
+        <method name="e[index]">
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>sets the rotation speed of the encoded signal in turn/s [init=0:min=-100:max=100:step=0.001].</description>
+      <description>sets the elevation of the [index]th encoded signal in degree for the 3D encoder.[index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-360:max=360:step=0.01].</description>
+      <digest>sets the elevation of the encoded signal in degree for the 3D encoder</digest>
+    </method>
+    <method name="s[index]">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>sets the return time in ms of the encoded source to come back to intial position after rotation speed goes back to 0 [init=20:min=0:max=1000:step=1].</description>
       <digest>sets the angle of the encoded signal in degree</digest>
+    </method>
+    <method name="sa[index]">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>sets the azimut rotation speed of the [index]th encoded signal in turn/s for 3D encoder. [index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-100:max=100:step=0.001].</description>
+      <digest>sets the azimut rotation speed of the encoded signal in degree for 3D encoder</digest>
+    </method>
+    <method name="se[index]">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>sets the elevation rotation speed of the [index]th encoded signal in turn/s for 3D encoder. [index] is an integer, if value inferior to 10 index should be written "6" for example. [init=0:min=-100:max=100:step=0.001].</description>
+      <digest>sets the elevation rotation speed of the encoded signal in degree for 3D encoder</digest>
     </method>
     <method name="returntime">
       <arglist>

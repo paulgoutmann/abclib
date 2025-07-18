@@ -521,3 +521,6 @@ function setvalueof() {
 	
 	mgraphics.redraw();
 }
+
+function anything() {
+}

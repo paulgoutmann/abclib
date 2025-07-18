@@ -36,7 +36,7 @@
   <objarglist>
       <objarg name="ambisonic-order" optional="0" type="int">
           <digest>
-              the ambisonic order of the decorrelation process
+              the ambisonic order of the modulation process
           </digest>
           <description>
               first argument is the ambisonic order [init=1, min=1, max=7, step=1].
@@ -51,35 +51,40 @@
       <digest>sets the mode of modulation</digest>
     </attribute>
 
-    <attribute name="frequency-modulation" type="float" set="1" get="1" size="1">
+    <attribute name="dimensions" type="int" set="1" get="1" size="1">
+      <description>sets the number of dimensions [init=2:min=2:max=3:step=1].</description>
+      <digest>sets the number of dimensions</digest>
+    </attribute>
+
+    <attribute name="f0" type="float" set="1" get="1" size="1">
       <description>sets the frequency modulation window size in Hz, also set maximum frequency value [init=48000:min=10:max=262144:step=1].</description>
       <digest>sets the delay window size in samples</digest>
     </attribute>
 
     <attribute name="factor" type="float" set="1" get="1" size="1">
-      <description>sets the decorralation factor value between 0 and 1, 0 means no fx, 1 is full decorrelation [init=0:min=0:max=1:step=0.001].</description>
-      <digest>sets the decorralation factor value between 0 and 1</digest>
-    </attribute>
-
-    <attribute name="fdbk" type="float" set="1" get="1" size="1">
-      <description>sets the feedback amont value between 0 and 0.99, 0 means no feedback [init=0:min=0:max=0.99:step=0.001].</description>
-      <digest>sets the feedback factor value between 0 and 0.99</digest>
+      <description>sets the modulation factor value between 0 and 1, 0 means no fx, 1 is full modulation [init=0:min=0:max=1:step=0.001].</description>
+      <digest>sets the modulation factor value between 0 and 1</digest>
     </attribute>
 
     <attribute name="functiontype" type="int" set="1" get="1" size="1">
-      <description>sets the function decorralation type [init=0:min=0:max=21:step=1]
+      <description>sets the function modulation type [init=0:min=0:max=21:step=1]
         <br />
         <br />
         Possible functions from 0 to 21 correspond to : 
         <br />
         x, x^2, sin, log(1+x), sqrt(x), 1-cos(Pi/2*x), (1-cos(Pi*x))/2, 1-(1-x)^2, composite1, x^3, 1-(1-x)^3, composite2, x^4, 1-(1-x)^4, composite3, x^5, 1-(1-x)^5, composite4, 2^(10(x-1)), composite5, 1-sqrt(1-x^2), sqrt(1-(x-1)^2).</description>
-      <digest>sets the function decorralation type</digest>
+      <digest>sets the function modulation type</digest>
+    </attribute>
+
+    <attribute name="distributionmode" type="int" set="1" get="1" size="1">
+      <description>sets the distribution type in 3D [init=0, min=0, max=2, step=1]</description>
+      <digest>sets the distribution type in 3D</digest>
     </attribute>
   </attributelist>
 
   <!--MESSAGES-->
   <methodlist>
-    <method name="frequency-modulation">
+    <method name="f0">
       <arglist>
         <arg type="float" />
       </arglist>
@@ -90,27 +95,28 @@
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>sets the decorralation factor value between 0 and 1, 0 means no fx, 1 is full decorrelation [init=0:min=0:max=1:step=0.001].</description>
-      <digest>sets the decorralation factor value between 0 and 1</digest>
+      <description>sets the modulation factor value between 0 and 1, 0 means no fx, 1 is full modulation [init=0:min=0:max=1:step=0.001].</description>
+      <digest>sets the modulation factor value between 0 and 1</digest>
     </method>
-    <method name="fdbk">
-      <arglist>
-        <arg type="float" />
-      </arglist>
-      <description>sets the feedback amont value between 0 and 0.99, 0 means no feedback [init=0:min=0:max=0.99:step=0.001].</description>
-      <digest>sets the feedback factor value between 0 and 0.99</digest>
-    </method>
+
     <method name="functiontype">
       <arglist>
         <arg type="int" />
       </arglist>
-      <description>sets the function decorralation type [init=0:min=0:max=21:step=1]
+      <description>sets the function modulation type [init=0:min=0:max=21:step=1]
         <br />
         <br />
         Possible functions from 0 to 21 correspond to : 
         <br />
         x, x^2, sin, log(1+x), sqrt(x), 1-cos(Pi/2*x), (1-cos(Pi*x))/2, 1-(1-x)^2, composite1, x^3, 1-(1-x)^3, composite2, x^4, 1-(1-x)^4, composite3, x^5, 1-(1-x)^5, composite4, 2^(10(x-1)), composite5, 1-sqrt(1-x^2), sqrt(1-(x-1)^2).</description>
-      <digest>sets the function decorralation type</digest>
+      <digest>sets the function modulation type</digest>
+    </method>
+    <method name="distributionmode">
+      <arglist>
+        <arg type="int" />
+      </arglist>
+      <description>sets the distribution type in 3D [init=0, min=0, max=2, step=1]</description>
+      <digest>sets the distribution type in 3D</digest>
     </method>
   </methodlist>
 

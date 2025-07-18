@@ -56,7 +56,7 @@ abc_2d_stereodecoder_ui(N) = thisStereoDecoder
 			gain = hslider("v:decoderStereo2/gain [unit:dB]", 0, -127, 18, 0.01) : db2gain;
 			leftDispatcher = _<:(*(1-direct), *(direct));
 			rightDispatcher = _<:(*(direct), *(1-direct));
-			thisStereoDecoder = ho.decoderStereo(N) : (*(gain), *(gain)) : (leftDispatcher, rightDispatcher) :> (_, _);
+			thisStereoDecoder = decoderStereo(N) : (*(gain), *(gain)) : (leftDispatcher, rightDispatcher) :> (_, _);
 };
 
 //-------`(abc.)abc_2d_decoder_ui`----------
@@ -84,19 +84,45 @@ abc_2d_decoder_ui(N, P) = iDecoder(N, la, direct, offset, stereo, gain)
 			//la = list of angles//
  			la = par(i, P, a(i, P));
 };
+
+//-------`(abc.)abc_3d_decoder_ui`----------
+// UI function for the general regular 3D decoder
+//
+// #### Usage
+//
+// ```
+// _,_, ... : abc_3d_decoder_ui(N, P) : _,_, ...
+// ```
+//
+// Where:
+//
+// * `N`: the ambisonic order (constant numerical expression)
+// * `P`: the number of loudspeakers (constant numerical expression)
+//-----------------------------
+abc_3d_decoder_ui(N, P) = decoder3D(N, la, le, gain) 
+	with {
+			gain = hslider("h:decoder/v:general/gain [unit:dB]", 0, -127, 18, 0.01) : db2gain;
+			//the azimut of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
+			a(i, nls) = nentry("h:decoder/v:azimut/a%i [unit:deg]", i * 360 / nls, -360, 360, 1);
+            //the elevation of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
+			e(i, nls) = nentry("h:decoder/v:elevation/e%i [unit:deg]", i * 180 / nls, 0, 180, 1);
+			//la = list of angles//
+ 			la = par(i, P, a(i, P));
+            le = par(i, P, e(i, P));
+};
 //
 //--------------------------------------------------------------------------------------//
 //AMBISONIC ENCODERS WITH ROTATION OR STATIC MODES
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_encoder_ui(N) = ho.rEncoder(N, speed, angle, returntime)
+abc_2d_encoder_ui(N) = rEncoder(N, speed, angle, returntime)
 	with {
 			speed = hslider("v:encoder/speed [unit:s-1]", 0, -100, 100, 0.001);
 			angle = hslider("v:encoder/angle [unit:deg]", 0, -360, 360, 0.01) * ma.PI / 180.0 ;
 			returntime = hslider("v:encoder/returntime [unit:msec]", 20, 0, 1000, 1) * 0.001;
 };
 
-abc_3d_encoder_ui(N) = ho.rEncoder3D(N, speedazim, speedelev, azim, elev, returntime)
+abc_3d_encoder_ui(N) = rEncoder3D(N, speedazim, speedelev, azim, elev, returntime)
 	with {
 			speedazim = hslider("v:encoder/speedazim [unit:s-1]", 0, -100, 100, 0.001);
             speedelev = hslider("v:encoder/speedelev [unit:s-1]", 0, -100, 100, 0.001);
@@ -110,23 +136,45 @@ abc_3d_encoder_ui(N) = ho.rEncoder3D(N, speedazim, speedelev, azim, elev, return
 //MULTIPLE AMBISONIC ENCODERS TO PLAY SEVERAL LOCALIZED SOURCES (STATIC ANGLES)
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_stereoEncoder_ui(N) = ho.stereoEncoder(N, angle)
+abc_2d_stereoEncoder_ui(N) = stereoEncoder(N, angle)
 	with {
 			angle = hslider("v:stereoEncoder/angle [unit:deg]", 0, -360, 360, 0.01) * ma.PI / 180.0 : si.smoo;
 };
 
-abc_2d_multiEncoder_ui(N, ns) = ho.multiEncoder(N, ls, la, returntime)
+abc_2d_multiEncoder_ui(N, ns) = multiEncoder(N, ls, la, returntime)
 	with {
 			//the speed of the ith source among p sources, expressed in turns by second for the end user
 			s(i, p) = nentry("v:multiencoder/h:speeds/s%i [unit:s-1]", 0, -100, 100, 0.001);
 			//the angle of the ith source among p sources, expressed in degrees for the end-user
-			a(i, p) = nentry("v:multiencoder/h:angles/a%i [unit:deg]", i * 360 / p, -360, 360, 0.01) * ma.PI / 180.0;
+			a(i, p) = nentry("v:multiencoder/h:angles/a%i [unit:deg]", i * 360 / p, -360, 360, 0.01) * ma.PI / 180.0 : abc_smoothedAngle ;
 			//the interpolation time between static position and rotation
 			returntime = hslider("v:multiencoder/returntime [unit:msec]", 20, 0, 1000, 1) * 0.001;
 			//ls = list of speeds//
 			ls = par(i, ns, s(i, ns));
 			//la = list of angles//
  			la = par(i, ns, a(i, ns));
+};
+
+abc_3d_multiEncoder_ui(N, ns) = multiEncoder3D(N, lAs, lEs, la, le, returntime)
+	with {
+			//the azimut speed of the ith source among p sources, expressed in turns by second for the end user
+			sa(i, p) = nentry("v:multiencoder/h:speeds/sa%i [unit:s-1]", 0, -100, 100, 0.001);
+			//the elevation speed of the ith source among p sources, expressed in turns by second for the end user
+			se(i, p) = nentry("v:multiencoder/h:speeds/se%i [unit:s-1]", 0, -100, 100, 0.001);
+			//the azimut of the ith source among p sources, expressed in degrees for the end-user
+			a(i, p) = nentry("v:multiencoder/h:angles/a%i [unit:deg]", i * 360 / p, -360, 360, 0.01) * ma.PI / 180.0 : si.smoo;
+			//the elevation of the ith source among p sources, expressed in degrees for the end-user
+			e(i, p) = nentry("v:multiencoder/h:angles/e%i [unit:deg]", i * 180 / p, -180, 180, 0.01) * ma.PI / 180.0 : si.smoo;
+			//the interpolation time between static position and rotation
+			returntime = hslider("v:multiencoder/returntime [unit:msec]", 20, 0, 1000, 1) * 0.001;
+			//ls = list of azimut speeds//
+			lAs = par(i, ns, sa(i, ns));
+			//ls = list of elevation speeds//
+			lEs = par(i, ns, se(i, ns));
+			//la = list of azimut//
+ 			la = par(i, ns, a(i, ns));
+			//la = list of elevation//
+ 			le = par(i, ns, e(i, ns));
 };
 
 //
@@ -136,7 +184,7 @@ abc_2d_multiEncoder_ui(N, ns) = ho.multiEncoder(N, ls, la, returntime)
 //
 abc_2d_map_ui(N) = thisMap
 	with {
-		thisMap(x, r, a) = ho.map(N, x, r, a);
+		thisMap(x, r, a) = map(N, x, r, a);
 };
 
 abc_2d_multiMap_ui(N, ns) = par(i, ns, abc_2d_map_ui(N)) :> si.bus(2*N+1);
@@ -165,7 +213,7 @@ abc_2d_multiMap_ui(N, ns) = par(i, ns, abc_2d_map_ui(N)) :> si.bus(2*N+1);
 //0 => ORIGINAL + MIRROR SOUND FIELD
 //-1 => MIRROR SOUND FIELD
 //--------------------------------------------------------------------------------------//
-abc_2d_mirror_ui(N) = ho.mirror(N, factor)
+abc_2d_mirror_ui(N) = mirror(N, factor)
 		with {
 			factor = hslider("factor", 1, -1, 1, 1) : si.smoo;
 };
@@ -213,7 +261,12 @@ abc_3d_vectors_ui(nls) = vectorVE3D(laz, lel)
 //The inPhase Optimization optimize energy vector and put all loudspeakers signals 
 //in phase. It should be used for an auditory.
 //--------------------------------------------------------------------------------------//
-abc_2d_optim_ui(N) = ho.optim(N, optimtype)
+abc_2d_optim_ui(N) = optim(N, optimtype)
+		with {
+			optimtype = nentry("optimtype", 0, 0, 2, 1);
+};
+
+abc_3d_optim_ui(N) = optim3D(N, optimtype)
 		with {
 			optimtype = nentry("optimtype", 0, 0, 2, 1);
 };
@@ -228,14 +281,14 @@ abc_2d_rotate_ui(N) = thisRotate
 			rotphase = hslider("v:rotate/angle [unit:deg]", 0, -360, 360, 0.01) / 360;
 			returntime = hslider("v:rotate/returntime [unit:msec]", 20, 0, 1000, 1) * 0.001;
 			//
-			thisRotate =  ho.rotate(N, 2 * ma.PI * abc_rotationorstaticphase(rotfreq, rotphase, returntime));
+			thisRotate =  rotate(N, 2 * ma.PI * abc_rotationorstaticphase(rotfreq, rotphase, returntime));
 };
 //
 //--------------------------------------------------------------------------------------//
 //AMBISONIC SOUND FIELD ROTATION
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_wider_ui(N) = ho.wider(N, width)
+abc_2d_wider_ui(N) = wider(N, width)
 		with {
 			width = hslider("width", 0, 0, 1, 0.01) : si. smoo;
 };
@@ -244,7 +297,7 @@ abc_2d_wider_ui(N) = ho.wider(N, width)
 //SCOPE OBJECTS FOR AMBISONIC VIZUALISATION USING XY SCOPE OBJECTS
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_scope_ui(N) = ho.scope(N, refresh)
+abc_2d_scope_ui(N) = scope(N, refresh)
 		with {
 			//refresh time, default is 10 msec
 			refresh = hslider("v:scope/refresh [unit:msec]", 10, 1, 2000, 1) * 0.001;
@@ -399,7 +452,7 @@ with {
 //--------------------------------------------------------------------------------------//
 //fx 3D decorrelation process
 //--------------------------------------------------------------------------------------//
-abc_3d_fx_decorrelation_ui(N) = fxDecorrelation3D(N, delay, winfreq, factor, fdbk, functiontype, mode) 
+abc_3d_fx_decorrelation_ui(N) = fxDecorrelation3D(N, delay, winfreq, factor, fdbk, functiontype, distributionmode) 
 	with {
 		delay = hslider("v:synfxdecorrelation3d/delay [unit:samples]", 48000, 10, 262144, 1);
 		window = 10; //by default a window of 10 milliseconds for the interpolation of delays//
@@ -407,7 +460,7 @@ abc_3d_fx_decorrelation_ui(N) = fxDecorrelation3D(N, delay, winfreq, factor, fdb
 		factor = hslider("v:synfxdecorrelation3d/factor", 0, 0, 1, 0.001);
 		fdbk = hslider("v:synfxdecorrelation3d/fdbk", 0, 0, 0.99, 0.001);
 		functiontype = hslider("v:synfxdecorrelation3d/functiontype", 0, 0, 21, 1);
-        mode = hslider("v:synfxdecorrelation3d/mode", 0, 0, 2, 1);
+        distributionmode = hslider("v:synfxdecorrelation3d/distributionmode", 0, 0, 2, 1);
 		//
 };
 
@@ -415,7 +468,7 @@ abc_3d_fx_decorrelation_ui(N) = fxDecorrelation3D(N, delay, winfreq, factor, fdb
 //--------------------------------------------------------------------------------------//
 //syn 3D decorrelation process
 //--------------------------------------------------------------------------------------//
-abc_3d_syn_decorrelation_ui(N) = synDecorrelation3D(N, delay, winfreq, factor, fdbk, functiontype, mode) 
+abc_3d_syn_decorrelation_ui(N) = synDecorrelation3D(N, delay, winfreq, factor, fdbk, functiontype, distributionmode) 
 	with {
 		delay = hslider("v:synfxdecorrelation3d/delay [unit:samples]", 48000, 10, 262144, 1);
 		window = 10; //by default a window of 10 milliseconds for the interpolation of delays//
@@ -423,7 +476,7 @@ abc_3d_syn_decorrelation_ui(N) = synDecorrelation3D(N, delay, winfreq, factor, f
 		factor = hslider("v:synfxdecorrelation3d/factor", 0, 0, 1, 0.001);
 		fdbk = hslider("v:synfxdecorrelation3d/fdbk", 0, 0, 0.99, 0.001);
 		functiontype = hslider("v:synfxdecorrelation3d/functiontype", 0, 0, 21, 1);
-        mode = hslider("v:synfxdecorrelation3d/mode", 0, 0, 2, 1);
+        distributionmode = hslider("v:synfxdecorrelation3d/distributionmode", 0, 0, 2, 1);
 		//
 };
 //
@@ -563,7 +616,7 @@ abc_2d_syn_grain_ui(n) = thissyngrain
 //fx ringmod process
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_fx_ringmod_ui(N) = ho.fxRingMod(N, f0, factor, functiontype)
+abc_2d_fx_ringmod_ui(N) = fxRingMod(N, f0, factor, functiontype)
 	with {
 		f0 = hslider("v:fxringmod/f0 [unit:Hz]", 10, 0, 10000, 0.0001);
 		factor = hslider("v:fxringmod/factor", 0, 0, 1, 0.001);
@@ -575,7 +628,7 @@ abc_2d_fx_ringmod_ui(N) = ho.fxRingMod(N, f0, factor, functiontype)
 //syn ringmod process
 //--------------------------------------------------------------------------------------//
 //
-abc_2d_syn_ringmod_ui(N) = ho.synRingMod(N, f0, factor, functiontype)
+abc_2d_syn_ringmod_ui(N) = synRingMod(N, f0, factor, functiontype)
 	with {
 		f0 = hslider("v:synfxringmod/f0 [unit:Hz]", 10, 0, 10000, 0.0001);
 		factor = hslider("v:synfxringmod/factor", 0, 0, 1, 0.001);
@@ -587,12 +640,12 @@ abc_2d_syn_ringmod_ui(N) = ho.synRingMod(N, f0, factor, functiontype)
 //fx 3D ringmod process
 //--------------------------------------------------------------------------------------//
 //
-abc_3d_fx_ringmod_ui(N) = fxRingMod3D(N, f0, factor, functiontype, mode)
+abc_3d_fx_ringmod_ui(N) = fxRingMod3D(N, f0, factor, functiontype, distributionmode)
 	with {
 		f0 = hslider("v:synfxringmod3d/f0 [unit:Hz]", 10, 0, 10000, 0.0001);
 		factor = hslider("v:synfxringmod3d/factor", 0, 0, 1, 0.001);
 		functiontype = hslider("v:synfxringmod3d/functiontype", 0, 0, 21, 1);
-        mode = hslider("v:synfxringmod3d/mode", 0, 0, 2, 1);
+        distributionmode = hslider("v:synfxringmod3d/distributionmode", 0, 0, 2, 1);
 };
 
 //
@@ -600,12 +653,12 @@ abc_3d_fx_ringmod_ui(N) = fxRingMod3D(N, f0, factor, functiontype, mode)
 //syn 3D ringmod process
 //--------------------------------------------------------------------------------------//
 //
-abc_3d_syn_ringmod_ui(N) = synRingMod3D(N, f0, factor, functiontype, mode)
+abc_3d_syn_ringmod_ui(N) = synRingMod3D(N, f0, factor, functiontype, distributionmode)
 	with {
 		f0 = hslider("v:synfxringmod3d/f0 [unit:Hz]", 10, 0, 10000, 0.0001);
 		factor = hslider("v:synfxringmod3d/factor", 0, 0, 1, 0.001);
 		functiontype = hslider("v:synfxringmod3d/functiontype", 0, 0, 21, 1);
-        mode = hslider("v:synfxringmod3d/mode", 0, 0, 2, 1);
+        distributionmode = hslider("v:synfxringmod3d/distributionmode", 0, 0, 2, 1);
 };
 
 //
@@ -644,7 +697,7 @@ abc_2d_syn_gain_ui(N) = synGain(N, lg)
 abc_2d_vbap_ui(n) = circularScaledVBAP(la, theta)
 	with {
 		a(i, nls) = nentry("v:vbap/a%i [unit:deg]", i * 360 / nls, -360, 360, 1);
-		theta = nentry("v:vbap/theta [unit:deg]", 0, -360, 360, 0.01) : si.smoo;
+		theta = nentry("v:vbap/theta [unit:deg]", 0, -360, 360, 0.01) / 180 * ma.PI : abc_smoothedAngle : _ / ma.PI * 180 ;
 		//la = list of angles//
  		la = par(i, n, a(i, n));
 	};
@@ -1291,7 +1344,7 @@ abc_cartesian2polar = permutation <: (module, phase) with {
 	phase = atan2;
 };
 //
-
+abc_smoothedAngle = _ <: (sin, cos) : (si.smoo, si.smoo) : atan2 ;
 //
 //
 //

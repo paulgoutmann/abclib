@@ -99,6 +99,9 @@ function patching() {
 		if (speakersSettedUp == false) speakers = order * 2 + 2;
 
 		objectToInstantiate = "abc_" + dimensions + "_decoder" + order + "_" + speakers + "~";
+	} else if (patcherName == 'abc.hoa.binaural~' || patcherName == 'abc.hoa.binaural') {
+		if (patcherName == 'abc.hoa.binaural') withUI = true;
+		objectToInstantiate = "abc_" + dimensions + "_binaural" + order + "~";
 	} else if (patcherName == 'abc.hoa.encoder~' || patcherName == 'abc.hoa.encoder') {
 		if (patcherName == 'abc.hoa.encoder') withUI = true;
 		if (sources > maxMEncoderSources) {
@@ -440,6 +443,17 @@ function patching() {
 			objectToInstantiate = "abc_" + "rev4stereo~";
 			error("abcWrapper => Can not instantiate the object ", patcherName, ". Instead, the object:", objectToInstantiate, "has been instantiated.");
 		}
+	} else if (patcherName == 'abc.vector~' || patcherName == 'abc.vector') {
+		if (patcherName == 'abc.vector') withUI = true;
+		if (speakersSettedUp == true && speakers > 3 && speakers <= 16) {
+			objectToInstantiate = "abc_" + dimensions + "_vectors" + speakers + "~";
+		}
+		else if (order > 3 && order <= 16)  {
+			objectToInstantiate = "abc_" + dimensions + "_vectors" + order + "~";
+		} else if (speakersSettedUp == false) {
+			speakers = 4;
+			objectToInstantiate = "abc_" + dimensions + "_vectors" + speakers + "~";
+		}
 	} else if (patcherName == 'abc.rissetsbell~' || patcherName == 'abc.rissetsbell') {
 		if (patcherName == 'abc.rissetsbell') withUI = true;
 		objectToInstantiate = "abc_" + "rissetsbell" + "~";
@@ -536,7 +550,17 @@ function patching() {
 	var outlet = patcher.newdefault(20, 420, "outlet");
 	outlet.message('comment','(multi-channel signal) Output');
 
-	if (inletsoutlets(abcObject)[1] > 1) {
+	//Because of the compilation pipeline binaural objects can't be compiled with RNBO
+	//Instead of that we compile it directly with faust command but there are 1 outlet more than the other objects
+	if (patcherName == "abc.hoa.binaural~") {
+		objectToInstantiate = "mc.pack~ " + (inletsoutlets(abcObject)[1]-1);
+		var packer = patcher.newdefault(20, 360, objectToInstantiate);
+
+		for (d = 0; d < (inletsoutlets(abcObject)[1]-1); d++) {
+			connectobject(abcObject, d, packer, d);//connect abc object to mc.pack~
+		}
+		connectobject(packer, 0, outlet, 0);//connect mc.pack~ to outlet
+	} else if (inletsoutlets(abcObject)[1] > 1) {
 		objectToInstantiate = "mc.pack~ " + (inletsoutlets(abcObject)[1]);
 		var packer = patcher.newdefault(20, 360, objectToInstantiate);
 		//addobjectauto(objectToInstantiate, 4);

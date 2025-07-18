@@ -54,7 +54,7 @@ declare author "Julien Colafrancesco";
 declare author "Wargreen";
 declare author "Alain Bonardi";
 declare author "Paul Goutmann";
-declare copyright "2012-2013 Guillot, Paris, Colafrancesco, CICM labex art H2H, U. Paris 8, 2019 Wargreen, 2022-2024 Bonardi, Goutmann";
+declare copyright "2012-2013 Guillot, Paris, Colafrancesco, CICM labex art H2H, U. Paris 8, 2019 Wargreen, 2022-2025 Bonardi, Goutmann";
 
 
 //========================================================================================
@@ -67,7 +67,7 @@ declare copyright "2012-2013 Guillot, Paris, Colafrancesco, CICM labex art H2H, 
 
 //----------------------`(ho.)encoder`---------------------------------
 // Ambisonic encoder. Encodes a signal in the circular harmonics domain
-// depending on an order of decomposition and an angle.
+// depending on an order of decomposition and an angle (ACN SN2D).
 //
 // #### Usage
 //
@@ -86,7 +86,7 @@ encoder(N, x, a) = encoder(N-1, x, a), x*sin(N*a), x*cos(N*a);
 
 
 //-------`(ho.)rEncoder`----------
-// Ambisonic encoder in 2D including source rotation. A mono signal is encoded at a certain ambisonic order
+// Ambisonic encoder in 2D including source rotation (ACN SN2D). A mono signal is encoded at a certain ambisonic order
 // with two possible modes: either rotation with an angular speed, or static with a fixed angle (when speed is zero).
 //
 // #### Usage
@@ -104,7 +104,7 @@ encoder(N, x, a) = encoder(N-1, x, a), x*sin(N*a), x*cos(N*a);
 //-----------------------------
 rEncoder(N, sp, a, it) = thisEncoder
 with {
-    basicEncoder(sig, angle) = ho.encoder(N, sig, angle);
+    basicEncoder(sig, angle) = encoder(N, sig, angle);
     thisEncoder = (_, rotationOrStaticAngle) : basicEncoder
     with {
         //converting the static angle from radians to [0; 1]
@@ -118,7 +118,7 @@ with {
 
 
 //-------`(ho.)aleaEncoder`----------
-// Ambisonic aleatory encoder in 2D. A mono signal is encoded at an ambisonic order
+// Ambisonic aleatory encoder in 2D (ACN SN2D). A mono signal is encoded at an ambisonic order
 // with a random position of the source around an angle inside an angular range.
 //
 // #### Usage
@@ -145,7 +145,7 @@ aleaEncoder(N, freq, angle, deltaAngle, index) = thisAleaEncoder
 			randomValue = + (90000 + index * 20) ~ *(1410065407);
 			noiseValue = randomValue / 2147483647.0;
 			randomAngle = noiseValue : *(deltaAngle / 2) : +(angle) : temporalFilter : ba.line(dt) : *(ma.PI) : /(180);
-			basicEncoder(sig, angle) = ho.encoder(N, sig, angle);
+			basicEncoder(sig, angle) = encoder(N, sig, angle);
     		thisAleaEncoder = (_, randomAngle) : basicEncoder;
 };
 
@@ -166,7 +166,7 @@ aleaEncoder(N, freq, angle, deltaAngle, index) = thisAleaEncoder
 //-----------------------------
 stereoEncoder(N, a) = (leftEncoder, rightEncoder) :> si.bus(2*N+1)
 with {
-    basicEncoder(sig, angle) = ho.encoder(N, sig, angle);
+    basicEncoder(sig, angle) = encoder(N, sig, angle);
     leftEncoder = (_, a / 2) : basicEncoder;
     rightEncoder = (_, -a /2) : basicEncoder;
 };
@@ -188,7 +188,7 @@ with {
 // * `lAngle` : a list of angles in radians on the unit circle to localize the sources (one angle per input signal)
 // * `it` : interpolation time (in milliseconds) between the rotation and the fixed modes.
 //-----------------------------
-multiEncoder(N, lSpeed, lAngle, it) = par(i, P, ho.rEncoder(N, ba.take(i+1, lSpeed), ba.take(i+1, lAngle), it)) :> si.bus(2*N+1)
+multiEncoder(N, lSpeed, lAngle, it) = par(i, P, rEncoder(N, ba.take(i+1, lSpeed), ba.take(i+1, lAngle), it)) :> si.bus(2*N+1)
 with {
     P = outputs(lSpeed); //supposed to be the same as the number of angles in lAngle
 };
@@ -239,7 +239,7 @@ with {
 //-------------------------------------------------------------------
 decoder(N, P) = par(i, 2*N+1, _) <: par(i, P, speaker(N, 2 * ma.PI*i/P))
 with {
-    speaker(N,a) = /(2), par(i, 2*N, _), ho.encoder(N, 2/P, a) : si.dot(2*N+1);
+    speaker(N,a) = /(2), par(i, 2*N, _), encoder(N, 2/P, a) : si.dot(2*N+1);
 };
 
 
@@ -299,7 +299,7 @@ iBasicDecoder(N, la, direct, shift) = (par(i, 2*N+1, _) <: par(i, P, speaker(N, 
 with {
     P = outputs(la);
     ang(i) = (ba.take(i+1, la)  - direct * shift) * direct * ma.PI / 180.;
-    speaker(N,alpha) = /(2), par(i, 2*N, _), ho.encoder(N,2/P,alpha) : si.dot(2*N+1);
+    speaker(N,alpha) = /(2), par(i, 2*N, _), encoder(N,2/P,alpha) : si.dot(2*N+1);
 };
 
 
@@ -390,7 +390,7 @@ with {
     P = outputs(la);
     //The VBAP decoder uses VBAP compensation: it balances the regular decoder output enabling to use irregular angular setup.
     Q = max(2*N+2, P);
-    iVBAPDecoder = ho.decoder(N, Q) : par(i, Q, circularScaledVBAP(la, (i * 360 / Q - direct * shift) * direct)) :> si.bus(P);
+    iVBAPDecoder = decoder(N, Q) : par(i, Q, circularScaledVBAP(la, (i * 360 / Q - direct * shift) * direct)) :> si.bus(P);
 };
 
 
@@ -424,7 +424,7 @@ with {
     with {
         leftDispatcher = _<:(*(1-direct), *(direct));
         rightDispatcher = _<:(*(direct), *(1-direct));
-        gDecoderStereo = ho.decoderStereo(N) : (*(g), *(g)) : (leftDispatcher, rightDispatcher) :> (_,_);
+        gDecoderStereo = decoderStereo(N) : (*(g), *(g)) : (leftDispatcher, rightDispatcher) :> (_,_);
     };
     //
     thisDecoder = si.bus(2*N+1) <: (si.bus(2*N+1), si.bus(2*N+1)) : (imlsDecoder(N, la, direct, shift), paddedStereoDecoder(N, P)) : (par(i, P, *(ambi)), *(st), *(st), si.bus(P-2))  :> si.bus(P) : par(i, P, *(g));
@@ -570,7 +570,7 @@ with {
     optb = (ot == 0) : si.smoo;
     optm = (ot == 1) : si.smoo;
     opti = (ot == 2) : si.smoo;
-    thisOptimizer = ((si.bus(2*N+1) <: ((si.bus(2*N+1):ho.optimBasic(N)), (si.bus(2*N+1):ho.optimMaxRe(N)), (si.bus(2*N+1):ho.optimInPhase(N)))), ((optb <: si.bus(2*N+1)), (optm <: si.bus(2*N+1)), (opti <: si.bus(2*N+1)))) : ro.interleave(6*N+3, 2) : par(i, 6*N+3, *) :> si.bus(2*N+1);
+    thisOptimizer = ((si.bus(2*N+1) <: ((si.bus(2*N+1):optimBasic(N)), (si.bus(2*N+1):optimMaxRe(N)), (si.bus(2*N+1):optimInPhase(N)))), ((optb <: si.bus(2*N+1)), (optm <: si.bus(2*N+1)), (opti <: si.bus(2*N+1)))) : ro.interleave(6*N+3, 2) : par(i, 6*N+3, *) :> si.bus(2*N+1);
 };
 
 
@@ -692,7 +692,7 @@ with {
     //Angle sweeping at a speed corresponding to refresh period between 0 and 2*PI
     theta = os.phasor(1, 1/rt) * 2 * ma.PI;
     //we get the vector of harmonic functions thanks to the encoding function//
-    harmonicsVector = ho.encoder(N, 1, theta);
+    harmonicsVector = encoder(N, 1, theta);
     //
     normalizedVector(N) = si.bus(N) <: (si.bus(N), norm) : ro.interleave(N, 2) : par(i, N, /)
     with {
@@ -1091,8 +1091,9 @@ th(21, i, p) = sqrt(1 - ((i+1) / p - 1)^2);
 //========================================================================================
 
 //----------------------`(ho.)encoder3D`---------------------------------
-// Ambisonic encoder. Encodes a signal in the circular harmonics domain
-// depending on an order of decomposition, an angle and an elevation.
+// Ambisonic encoder. Encodes a signal in the spherical harmonics domain
+// depending on an order of decomposition, an angle and an elevation. This decoder uses 
+// SN3D norm and ACN channel ordering
 //
 // #### Usage
 //
@@ -1115,8 +1116,10 @@ with {
     order(index) = int(index - int(degree(index) * int(degree(index) + 1)));
 
     // The spherical harmonics
-    y(l, m, theta, phi) =  e(m, theta2) * k(l, m) * p(l, m, cos(phi + ma.PI * 0.5))
+    //y(l, m, theta, phi) =  e(m, theta2) * k(l, m) * p(l, m, cos(phi + ma.PI * 0.5))
+    y(l, m, theta, phi) =  cordon_coef(m) * e(m, theta2) * k(l, m) * p(l, m, sin(phi))
     with {
+        cordon_coef(m) = -1^abs(m);
         //theta2 enables a continuous movement of elevation (when phi becomes greater than Pi/2)
         theta2 = theta + (1 - int(fmod(fmod(phi / ma.PI - 0.5, 2) + 2, 2))) * ma.PI;
         //
@@ -1238,7 +1241,7 @@ aleaEncoder3D(N, freq, azimuth, elevation, deltaAzimuth, deltaElevation, indA, i
             noiseValE = rndValE / 2147483647.0;
 			randomAzimuth = noiseValA : *(deltaAzimuth / 2) : +(azimuth) : temporalFilter : ba.line(dt) : *(ma.PI) : /(180);
             randomElevation = noiseValE : *(deltaElevation / 2) : +(elevation) : temporalFilter : ba.line(dt) : *(ma.PI) : /(180);
-            basic3DEncoder(sig, ang1, ang2) = ho.encoder3D(N, sig, ang1, ang2);
+            basic3DEncoder(sig, ang1, ang2) = encoder3D(N, sig, ang1, ang2);
             thisAleaEncoder3D = (_, randomAzimuth, randomElevation) : basic3DEncoder;
 };
 
@@ -1261,7 +1264,7 @@ aleaEncoder3D(N, freq, azimuth, elevation, deltaAzimuth, deltaElevation, indA, i
 // * `lEl` : a list of elevation angles in radians on the unit circle to localize the sources (one angle per input signal) when their elevation speed is 0
 // * `it` : interpolation time (in milliseconds) between the rotation and the fixed modes.
 //-----------------------------
-multiEncoder3D(N, lAzSpeed, lElSpeed, lAz, lEl, it) = par(i, P, ho.rEncoder3D(N, ba.take(i+1, lAzSpeed), ba.take(i+1, lElSpeed), ba.take(i+1, lAz), ba.take(i+1, lEl), it)) :> si.bus((N+1)*(N+1))
+multiEncoder3D(N, lAzSpeed, lElSpeed, lAz, lEl, it) = par(i, P, rEncoder3D(N, ba.take(i+1, lAzSpeed), ba.take(i+1, lElSpeed), ba.take(i+1, lAz), ba.take(i+1, lEl), it)) :> si.bus((N+1)*(N+1))
 with {
     P = outputs(lAzSpeed); //all lists are supposed to have the same length
 };
@@ -1291,6 +1294,33 @@ with {
 multiAleaEncoder3D(N, lFreq, lAz, lEl, lDeltaAz, lDeltaEl) = par(i, P, aleaEncoder3D(N, ba.take(i+1, lFreq), ba.take(i+1, lAz), ba.take(i+1, lEl), ba.take(i+1, lDeltaAz), ba.take(i+1, lDeltaEl), 2*i, 2*i+1)) :> si.bus((N+1)*(N+1))
 with {
     P = outputs(lFreq); //all lists are supposed to have the same length
+};
+
+//----------------------`(ho.)decoder3D`---------------------------------
+// Regular ambisonic 3D decoder. Decodes an ambisonics sound field for a spherical
+// array of loudspeakers using a direct decoding technic. This decoder uses 
+// SN3D norm and ACN channel ordering. The lenght of the list determines the 
+// number of loudspeakers. 
+//
+// #### Usage
+//
+// ```
+// decoder3D(N, la, le, g) : _,_,...
+// ```
+//
+// Where:
+//
+// * `N`: the ambisonic order (constant numerical expression)
+// * `la`: the list of loudspeaker azimut
+// * `le`: the list of loudspeaker elevation
+// * `g` : gain between 0 and 1
+//----------------------------------------------------------------
+decoder3D(N, la, le, g) = par(i, (N+1)^2, _) <: par(i, P, speaker(N, azim(i), elev(i))) : par(i, P, *(g)) 
+with {
+    P = outputs(la);
+    azim(i) = ba.take(i+1, la) * ma.PI / 180. ; 
+    elev(i) = ba.take(i+1, le) * ma.PI / 180. ; 
+    speaker(N,theta,phi) = _/(2), si.bus(((N+1)^2)-1), encoder3D(N, 2/P, theta, phi) : si.dot((N+1)^2);
 };
 
 
@@ -1386,7 +1416,7 @@ with {
     optm = (ot == 1) : si.smoo;
     opti = (ot == 2) : si.smoo;
     bus3D = si.bus((N+1)*(N+1));
-    thisOptimizer = ((bus3D  <: ((bus3D:ho.optimBasic3D(N)), (bus3D:ho.optimMaxRe3D(N)), (bus3D:ho.optimInPhase3D(N)))), ((optb <: bus3D), (optm <: bus3D), (opti <: bus3D))) : ro.interleave(3*(N+1)*(N+1), 2) : par(i, 3*(N+1)*(N+1), *) :> bus3D;
+    thisOptimizer = ((bus3D  <: ((bus3D:optimBasic3D(N)), (bus3D:optimMaxRe3D(N)), (bus3D:optimInPhase3D(N)))), ((optb <: bus3D), (optm <: bus3D), (opti <: bus3D))) : ro.interleave(3*(N+1)*(N+1), 2) : par(i, 3*(N+1)*(N+1), *) :> bus3D;
 };
 
 

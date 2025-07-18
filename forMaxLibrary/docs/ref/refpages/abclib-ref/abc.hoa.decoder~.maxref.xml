@@ -5,10 +5,9 @@
 
 <c74object name="abc.hoa.decoder~" module="abclib">
   <digest>Abclib's 2D High Order Ambisonics (HOA) Decoder</digest>
-  <description><o>abc.hoa.decoder~</o> is an 2D High Order Ambisonics (HOA) decoder.
-    <br />
-    <br />
-    This object enable you to decode from ambisonic spatial components to sets of loudspeakers. At order 1, the decoder is by default for 4 loudspeakers, at order 2, 6 LS, at order 3, 8 LS, ... at order 7,16 LS. You can change the number of loudspeakers with the <i>speakers</i> attribut. This decoder use Ambisonics Channel Numbering and N2D format. <br /><br />
+  <description><o>abc.hoa.decoder~</o> enable you to decode from ambisonic spatial components to sets of loudspeakers. At order 1, the decoder is by default for 4 loudspeakers, at order 2, 6 LS, at order 3, 8 LS, ... at order 7,16 LS. You can change the number of loudspeakers with the <i>speakers</i> attribut. This decoder use Ambisonics Channel Numbering and N2D/SN3D format.<br />
+    The first argument is the ambisonic order. <br />
+    To change the number of loudspeakers, use the attribute '@speakers' followed by the number of loudspeakers. 
   </description>
 
   <!--INLETS-->
@@ -43,6 +42,11 @@
     <attribute name="speakers" type="int" set="1" get="1" size="1">
       <description>sets the number of speakers used to synthesized the acoustic field [init=2N+2:min=3:max=16:step=1].</description>
       <digest>sets the number of speakers</digest>
+    </attribute>
+
+    <attribute name="dimensions" type="int" set="1" get="1" size="1">
+      <description>sets the number of dimensions [init=2:min=2:max=3:step=1].</description>
+      <digest>sets the number of dimensions</digest>
     </attribute>
 
     <attribute name="stereo" type="boolean" set="1" get="1" size="1">
