@@ -939,7 +939,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.238108666666562, 524.0, 45.0, 45.0 ]
+									"patching_rect" : [ 151.238108666666562, 557.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1032,13 +1032,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-76",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 6.0, 522.0, 134.0, 49.0 ],
-									"text" : "abc.hoa.decoder~ 3 @dimensions 3 @mode binaural"
+									"patching_rect" : [ 6.0, 522.0, 200.0, 22.0 ],
+									"text" : "abc.hoa.binaural~ 3 @dimensions 3"
 								}
 
 							}
@@ -2369,13 +2368,12 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-28",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 296.0, 188.0, 50.0, 22.0 ],
-													"text" : "292."
+													"text" : "1000."
 												}
 
 											}
@@ -7286,6 +7284,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "abc.hoa.binaural~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "abc.hoa.decoder~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
 				"patcherrelativepath" : "../patchers",
@@ -7409,7 +7414,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "abc_3d_decoder3_8~.mxo",
+				"name" : "abc_3d_binaural3~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
