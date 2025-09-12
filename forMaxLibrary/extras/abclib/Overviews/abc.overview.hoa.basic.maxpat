@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 976.0, 778.0 ],
+		"rect" : [ -61.0, -993.0, 976.0, 778.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1650,7 +1650,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 976.0, 752.0 ],
+						"rect" : [ -61.0, -967.0, 976.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1781,8 +1781,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 721.0, 232.0, 95.0, 464.0 ],
-									"text" : ";\rdec-3d a0 0;\rdec-3d e0 0;\rdec-3d a1 45;\rdec-3d e1 0;\rdec-3d a2 90;\rdec-3d e2 0;\rdec-3d a3 135;\rdec-3d e3 0;\rdec-3d a4 180;\rdec-3d e4 0;\rdec-3d a5 225;\rdec-3d e5 0;\rdec-3d a6 270;\rdec-3d e6 0;\rdec-3d a7 315;\rdec-3d e7 0;\rdec-3d a8 15;\rdec-3d e8 38;\rdec-3d a9 92;\rdec-3d e9 38;\rdec-3d a10 165;\rdec-3d e10 38;\rdec-3d a11 236;\rdec-3d e11 38;\rdec-3d a12 305;\rdec-3d e12 38;\rdec-3d a13 318;\rdec-3d e13 70;\rdec-3d a14 80;\rdec-3d e14 70;\rdec-3d a15 200;\rdec-3d e15 70;\r"
+									"patching_rect" : [ 721.0, 232.0, 125.0, 464.0 ],
+									"text" : ";\rdec-3d-topic a0 0;\rdec-3d-topic e0 0;\rdec-3d-topic a1 45;\rdec-3d-topic e1 0;\rdec-3d-topic a2 90;\rdec-3d-topic e2 0;\rdec-3d-topic a3 135;\rdec-3d-topic e3 0;\rdec-3d-topic a4 180;\rdec-3d-topic e4 0;\rdec-3d-topic a5 225;\rdec-3d-topic e5 0;\rdec-3d-topic a6 270;\rdec-3d-topic e6 0;\rdec-3d-topic a7 315;\rdec-3d-topic e7 0;\rdec-3d-topic a8 15;\rdec-3d-topic e8 38;\rdec-3d-topic a9 92;\rdec-3d-topic e9 38;\rdec-3d-topic a10 165;\rdec-3d-topic e10 38;\rdec-3d-topic a11 236;\rdec-3d-topic e11 38;\rdec-3d-topic a12 305;\rdec-3d-topic e12 38;\rdec-3d-topic a13 318;\rdec-3d-topic e13 70;\rdec-3d-topic a14 80;\rdec-3d-topic e14 70;\rdec-3d-topic a15 200;\rdec-3d-topic e15 70;\r"
 								}
 
 							}
@@ -1793,8 +1793,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 241.0, 510.0, 53.0, 22.0 ],
-									"text" : "r dec-3d"
+									"patching_rect" : [ 241.0, 510.0, 82.0, 22.0 ],
+									"text" : "r dec-3d-topic"
 								}
 
 							}
@@ -4431,7 +4431,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 126.0, 976.0, 752.0 ],
+						"rect" : [ 0.0, 26.0, 976.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4476,7 +4476,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 22.5, 417.0, 150.0, 150.0 ],
+									"patching_rect" : [ 22.0, 417.0, 150.0, 150.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -4810,7 +4810,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 31.5, 402.0, 32.0, 402.0 ],
+									"midpoints" : [ 31.5, 402.0, 31.5, 402.0 ],
 									"source" : [ "obj-69", 0 ]
 								}
 
