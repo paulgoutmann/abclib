@@ -30,9 +30,9 @@
 
   <!--ATTRIBUTES-->
   <attributelist>
-    <attribute name="drawing-type" type="boolean" set="1" get="1" size="1">
-      <digest>type of drawing (points or lines).</digest>
-      <description>[ONLY IN INSPECTOR] type of drawing (points or lines).</description>
+    <attribute name="drawing-type" type="string" set="1" get="1" size="1">
+      <digest>type of drawing (line_strip or points).</digest>
+      <description>[ONLY IN INSPECTOR] type of drawing (line_strip or points).</description>
     </attribute>
 
     <attribute name="size" type="float" set="1" get="1" size="1">
@@ -47,8 +47,8 @@
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>[ONLY IN INSPECTOR] type of drawing (points or lines)</description>
-      <digest>type of drawing (points or lines).</digest>
+      <description>[ONLY IN INSPECTOR] type of drawing (line_strip or points)</description>
+      <digest>type of drawing (line_strip or points).</digest>
     </method>
 
     <method name="size">
