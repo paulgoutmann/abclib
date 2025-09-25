@@ -41,6 +41,11 @@
       <description>sets the angle of the [index] speaker in degree, [index] is an integer corresponding to the number of the process from 0, if value inferior to 10 index should be written "6" for example. [init=0:min=-360:max=360:step=0.01].</description>
       <digest>sets the angle of the [index] speaker in degree</digest>
     </attribute>
+
+    <attribute name="theta" type="float" set="1" get="1" size="1">
+      <description>sets the projection angle of the source in degree (clockwise) [init=0:min=-360:max=360:step=0.01].</description>
+      <digest>sets the projection angle of the source in degree (clockwise) </digest>
+    </attribute>
   </attributelist>
 
   <!--MESSAGES-->
@@ -51,6 +56,14 @@
       </arglist>
       <description>sets the angle of the [index] speaker in degree, [index] is an integer corresponding to the number of the process from 0, if value inferior to 10 index should be written "6" for example. [init=0:min=-360:max=360:step=0.01].</description>
       <digest>sets the angle of the [index] speaker in degree</digest>
+    </method>
+
+        <method name="theta">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>sets the projection angle of the source in degree (clockwise) [init=0:min=-360:max=360:step=0.01].</description>
+      <digest>sets the projection angle of the source in degree (clockwise) </digest>
     </method>
   </methodlist>
 
