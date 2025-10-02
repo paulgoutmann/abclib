@@ -5,7 +5,7 @@
 
 <c74object name="abc.gaincontrol" module="abclib">
   <digest>Abclib's graphic control of amplitude</digest>
-  <description><o>abc.gaincontrol</o> is an abstraction that outputs a message 'gain' followed by an amplitude value in dB (from -127 to +18 dB). It enables to control abc.mc.gain~ and abc.hoa.decoder~ objects.As a bpatcher, it includes one default value that is the gain value in dB when launching the patch.  </description>
+  <description><o>abc.gaincontrol</o> is an abstraction that outputs a message 'gain' followed by an amplitude value in dB (from -127 to +18 dB). It mainly enables to control abc.mc.gain~ and abc.hoa.decoder~ objects. As a bpatcher, it includes one default value that is the gain value in dB when launching the patch.  </description>
 
   <!--INLETS-->
   <!-- <inletlist>
