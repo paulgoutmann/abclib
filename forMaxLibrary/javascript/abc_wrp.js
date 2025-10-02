@@ -17,7 +17,8 @@ patching();
 function patching() {
 	//Constants:
 	var baseAmbisonicOrder = 1;
-	var maxAmbisonicOrder = 7;
+	var max2dAmbisonicOrder = 7;
+	var max3dAmbisonicOrder = 3;
 	var maxSpeakers = 16;
 	var maxMCinstances = 16;
 	var maxMAPsources = 8;
@@ -34,19 +35,37 @@ function patching() {
 	var isHOA = (new RegExp("abc.hoa", "i").test(patcherName));//||(new RegExp("abc_3d", "i").test(jsobjectname));
 	var isMC = (new RegExp("abc.mc", "i").test(patcherName));
 
-	if (typeof args[1] === 'number' && args[1] != 0) {
-		order = args[1];//Max puts a zero when there are no arguments
-		if (order > maxAmbisonicOrder && isHOA == 1) {//We check if is an HOA object
-			error("abcWrapper => ", "The maximum HOA order is", maxAmbisonicOrder, ". Replacing", order, "by", maxAmbisonicOrder, ".");
-			order = maxAmbisonicOrder;
-		}
-	}
-
 	var speakers;
 	var dimensions = "2d";
 	var sources = 1;//To transform the encoder to multiencoder
 	var mode = "fx";//fx or syn
 	var finalchannels;//variable to save the number of channels of the MC objects, if the user inputs instances or order instead of channels it will still work and we will save the value on this variable.
+
+		if (typeof args[1] === 'number' && args[1] != 0) {
+		if (isHOA == 1) {
+			order = args[1];//Max puts a zero when there are no arguments
+			if (order > max2dAmbisonicOrder && dimensions == '2d') {//We check if is an 2D HOA object
+			error("abcWrapper => ", "The maximum HOA order is", max2dAmbisonicOrder, ". Replacing", order, "by", max2dAmbisonicOrder, ".");
+			order = max2dAmbisonicOrder;
+			} else if (order > max3dAmbisonicOrder && dimensions == '3d') {//We check if is an 3D HOA object
+			error("abcWrapper => ", "The maximum HOA order is", max3dAmbisonicOrder, ". Replacing", order, "by", max3dAmbisonicOrder, ".");
+			order = max3dAmbisonicOrder;
+			}
+		} else if (isMC == 1) {
+			instances = args[1];
+			if (instances > maxMCinstances) {
+			error("abcWrapper => ", "The maximum MC instances is", maxMCinstances, ". Replacing", instances, "by", maxMCinstances, ".");
+			instances = maxMCinstances;
+			}
+		} else {
+			order = args[1];//Warning: many objects use "order" to set number of channels (e.g. vbap/vector) even its not ambisonics. We need to adress this feature in futur. 
+			if (order > maxMCinstances){
+			error("abcWrapper => ", "The maximum number of MC channels is", maxMCinstances, ". Replacing", channels, "by", maxMCinstances, ".");
+			order = maxMCinstances;
+			}
+		}
+	}
+
 	for (var i = 1; i < args.length; i++) {
 		if (args[i] == "@speakers" || args[i] == "@spk") {
 			speakers = args[i + 1];
@@ -96,8 +115,11 @@ function patching() {
 	//List of ABC delicious objects:
 	if (patcherName == 'abc.hoa.decoder~' || patcherName == 'abc.hoa.decoder') {
 		if (patcherName == 'abc.hoa.decoder') withUI = true;
-		if (speakersSettedUp == false) speakers = order * 2 + 2;
-
+		if (speakersSettedUp == false && dimensions == "2d") {
+			speakers = order * 2 + 2;
+		} else if (speakersSettedUp == false && dimensions == "3d") {
+			speakers = (order + 1) * (order + 1);
+		}
 		objectToInstantiate = "abc_" + dimensions + "_decoder" + order + "_" + speakers + "~";
 	} else if (patcherName == 'abc.hoa.binaural~' || patcherName == 'abc.hoa.binaural') {
 		if (patcherName == 'abc.hoa.binaural') withUI = true;
