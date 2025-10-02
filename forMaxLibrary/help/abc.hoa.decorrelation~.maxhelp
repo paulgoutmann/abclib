@@ -1245,7 +1245,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 681.0 ],
+						"rect" : [ 100.0, 126.0, 967.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1397,7 +1397,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objetcs in 'man' mode apply decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by the GUI abc.dtd.ui. " ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ objetc in 'man' mode applies decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by the GUI abc.dtd.ui. " ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1444,6 +1444,8 @@
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "number",
+									"maximum" : 36,
+									"minimum" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -1493,6 +1495,8 @@
 									"format" : 6,
 									"id" : "obj-33",
 									"maxclass" : "flonum",
+									"maximum" : 48000.0,
+									"minimum" : 0.0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -1544,6 +1548,8 @@
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "number",
+									"maximum" : 21,
+									"minimum" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -5570,7 +5576,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objects in 'fx' mode apply decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1. " ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ object in 'fx' mode applies decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1. " ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -6250,7 +6256,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 967.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6294,7 +6300,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objects in 'syn' mode generate spatial decorrelated components from one mono signal at a given ambisonic order N. Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1." ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ object in 'syn' mode generates spatial decorrelated components from one mono signal at a given ambisonic order N. Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1." ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
