@@ -202,7 +202,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-41",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -244,7 +243,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-122",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -286,7 +284,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-120",
 									"maxclass" : "comment",
 									"numinlets" : 1,
