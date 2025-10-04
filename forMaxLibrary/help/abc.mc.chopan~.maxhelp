@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, -868.0, 992.0, 606.0 ],
+		"rect" : [ 34.0, 100.0, 992.0, 606.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -496,7 +496,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, -842.0, 992.0, 580.0 ],
+						"rect" : [ 34.0, 126.0, 992.0, 580.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -536,7 +536,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 288.5, 174.0, 139.0, 39.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Spreading area in green"
 								}
 
@@ -563,7 +562,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 294.0, 242.5, 128.0, 39.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Incidental angle in red"
 								}
 

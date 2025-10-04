@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 39.0, 100.0, 798.0, 733.0 ],
+		"rect" : [ 34.0, 100.0, 798.0, 733.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -253,7 +253,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 509.0, 61.0, 143.0, 60.0 ],
-									"presentation_linecount" : 4,
 									"text" : "two modes are provided: \n\n@mode linear\n@mode cosinus"
 								}
 
@@ -401,7 +400,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-14",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -628,7 +626,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-37",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1143,7 +1140,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-62",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1271,7 +1267,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-61",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1284,7 +1279,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-60",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1670,7 +1664,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 39.0, 126.0, 798.0, 707.0 ],
+						"rect" : [ 34.0, 126.0, 798.0, 707.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2481,7 +2475,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-53",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -2671,7 +2664,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-11",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -2684,7 +2676,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-12",
 									"linecount" : 2,
 									"maxclass" : "comment",

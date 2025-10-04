@@ -1161,7 +1161,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-21",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -1439,7 +1438,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-29",
 									"linecount" : 4,
 									"maxclass" : "comment",
@@ -2592,7 +2590,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 297.0, 350.0, 70.0, 60.0 ],
-									"presentation_linecount" : 4,
 									"text" : "generates a square trajectory in cartesian"
 								}
 
@@ -3320,7 +3317,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 222.0, 595.0, 137.0, 47.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Output gain in dB and\nnumbers of the outputs in the inspector menu"
 								}
 
@@ -3333,7 +3329,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 238.0, 336.0, 70.0, 60.0 ],
-									"presentation_linecount" : 4,
 									"text" : "generates a square trajectory in cartesian"
 								}
 
@@ -3381,7 +3376,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 429.0, 242.0, 246.0, 194.0 ],
-									"presentation_linecount" : 14,
 									"text" : "@mode square \n@mode Z\n@mode squareZ\n@mode random\n@mode circular\n\nabc.trajectories generate 2D trajectories in cartesian coordinates. mode square stands for a square, mode Z for a Z, mode squareZ for an interpolation between a square and a Z, mode random for a random trajectory.\nAll of them have in common two controllers: freq (frequency of the shape in s-1), and size."
 								}
 

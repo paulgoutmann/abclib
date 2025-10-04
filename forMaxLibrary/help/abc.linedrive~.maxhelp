@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 172.0, 893.0, 643.0 ],
+		"rect" : [ 34.0, 100.0, 893.0, 643.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 198.0, 893.0, 617.0 ],
+						"rect" : [ 34.0, 126.0, 893.0, 617.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -704,7 +704,6 @@
 					}
 ,
 					"patching_rect" : [ 38.0, 106.0, 93.0, 22.0 ],
-					"presentation_linecount" : 7,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

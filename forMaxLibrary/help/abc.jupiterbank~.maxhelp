@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 98.0, 100.0, 840.0, 688.0 ],
+		"rect" : [ 34.0, 100.0, 840.0, 688.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -131,7 +131,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 98.0, 126.0, 840.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 840.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -316,9 +316,9 @@
 													"autofit" : 1,
 													"id" : "hoa.2d.scope~",
 													"instance_attributes" : 													{
+														"palette_caption" : "hoa.2d.scope~",
 														"palette_category" : [ "HoaLib", "Interface", "Recent" ],
-														"palette_action" : "hoa.2d.scope~",
-														"palette_caption" : "hoa.2d.scope~"
+														"palette_action" : "hoa.2d.scope~"
 													}
 ,
 													"maxclass" : "fpic",
@@ -736,12 +736,12 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.866667, 0.866667, 0.866667, 0.0 ],
-									"bgcolor2" : [ 0.866667, 0.866667, 0.866667, 0.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+									"bgcolor2" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 1.0 ],
-									"bgfillcolor_color1" : [ 0.866667, 0.866667, 0.866667, 0.0 ],
+									"bgfillcolor_color1" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"bgfillcolor_color2" : [ 0.07451, 0.027451, 1.0, 1.0 ],
 									"bgfillcolor_proportion" : 0.5,
 									"bgfillcolor_type" : "color",
@@ -1174,7 +1174,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-57",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1636,7 +1635,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 840.0, 662.0 ],
+						"rect" : [ 34.0, 126.0, 840.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2261,7 +2260,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-57",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -2962,9 +2960,9 @@
 													"autofit" : 1,
 													"id" : "hoa.2d.scope~",
 													"instance_attributes" : 													{
+														"palette_caption" : "hoa.2d.scope~",
 														"palette_category" : [ "HoaLib", "Interface", "Recent" ],
-														"palette_action" : "hoa.2d.scope~",
-														"palette_caption" : "hoa.2d.scope~"
+														"palette_action" : "hoa.2d.scope~"
 													}
 ,
 													"maxclass" : "fpic",
@@ -3625,9 +3623,9 @@
 									"autofit" : 1,
 									"id" : "hoa.2d.scope~",
 									"instance_attributes" : 									{
+										"palette_caption" : "hoa.2d.scope~",
 										"palette_category" : [ "HoaLib", "Interface", "Recent" ],
-										"palette_action" : "hoa.2d.scope~",
-										"palette_caption" : "hoa.2d.scope~"
+										"palette_action" : "hoa.2d.scope~"
 									}
 ,
 									"maxclass" : "fpic",

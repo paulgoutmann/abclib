@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 824.0, -993.0, 812.0, 778.0 ],
+		"rect" : [ 34.0, 100.0, 812.0, 778.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -123,7 +123,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 824.0, -967.0, 812.0, 752.0 ],
+						"rect" : [ 0.0, 26.0, 812.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -159,7 +159,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 174.089278999999976, 86.0, 40.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "play it"
 								}
 
@@ -201,7 +200,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 756.0, 435.0, 49.0, 33.0 ],
+									"patching_rect" : [ 756.0, 435.0, 51.0, 33.0 ],
 									"text" : "choose preset"
 								}
 
@@ -1025,7 +1024,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 812.0, 752.0 ],
+						"rect" : [ 34.0, 126.0, 812.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1492,91 +1491,91 @@
 		"dependency_cache" : [ 			{
 				"name" : "2plf.js",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/jsui",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/jsui",
+				"patcherrelativepath" : "../jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.2plf.ui.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.bgcomment.js",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/javascript",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.comment.bg.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.gaincontrol.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.help.description.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.helpcredit.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.helpheader.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.hoa.decoder~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.hoa.decorrelation~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.launch.js",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/javascript",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.quadriout~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
+				"patcherrelativepath" : "../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "abc.soundcoat~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1591,7 +1590,7 @@
 , 			{
 				"name" : "abc_help_icon.png",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/media/images",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/media/images",
+				"patcherrelativepath" : "../media/images",
 				"type" : "PNG",
 				"implicit" : 1
 			}
@@ -1602,21 +1601,21 @@
 , 			{
 				"name" : "abc_wrp.js",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/javascript",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "help-plf.json",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/presets",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/presets",
+				"patcherrelativepath" : "../misc/presets",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "resize_bpatcher.js",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/javascript",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

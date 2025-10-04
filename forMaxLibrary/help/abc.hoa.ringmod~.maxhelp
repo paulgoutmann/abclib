@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 259.0, -704.0, 766.0, 670.0 ],
+		"rect" : [ 34.0, 100.0, 766.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -666,7 +666,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 259.0, -678.0, 766.0, 644.0 ],
+						"rect" : [ 0.0, 26.0, 766.0, 644.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1006,12 +1006,13 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-28",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 296.0, 188.0, 50.0, 22.0 ],
-													"text" : "50."
+													"text" : "13.466667"
 												}
 
 											}
@@ -4078,7 +4079,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 766.0, 644.0 ],
+						"rect" : [ 34.0, 126.0, 766.0, 644.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

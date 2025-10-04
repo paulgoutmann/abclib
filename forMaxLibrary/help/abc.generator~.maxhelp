@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 804.0, 588.0 ],
+		"rect" : [ 34.0, 100.0, 804.0, 588.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 804.0, 562.0 ],
+						"rect" : [ 34.0, 126.0, 804.0, 562.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -230,7 +230,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.321441999999934, 493.0, 154.0, 24.0 ],
+									"patching_rect" : [ 151.321441999999934, 493.0, 158.0, 24.0 ],
 									"text" : "See also synthesis topic "
 								}
 
@@ -1766,7 +1766,6 @@
 					}
 ,
 					"patching_rect" : [ 18.0, 79.0, 100.0, 22.0 ],
-					"presentation_linecount" : 7,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1795,7 +1794,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 119.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 804.0, 562.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1824,7 +1823,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [  ],
 						"lines" : [  ]
 					}
