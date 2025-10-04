@@ -258,6 +258,8 @@
 									"format" : 6,
 									"id" : "obj-19",
 									"maxclass" : "flonum",
+									"maximum" : 100.0,
+									"minimum" : 0.01,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],

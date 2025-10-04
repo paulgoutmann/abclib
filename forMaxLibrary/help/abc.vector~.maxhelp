@@ -119,7 +119,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 47.0, 126.0, 1137.0, 752.0 ],
+						"rect" : [ 0.0, 26.0, 1137.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1555,7 +1555,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1137.0, 752.0 ],
+						"rect" : [ 47.0, 126.0, 1137.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1694,7 +1694,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 288.0, 583.0, 243.0, 78.0 ],
-									"text" : "when the source is projected on the back of the setup there is a bad locatedness because of the low density of loudspeaker. We can see that thanks to the norm of the two vectors"
+									"text" : "when the source is projected on the back of the setup there is a bad locatedness because of the low density of loudspeakers. We can see that thanks to the norm of the two vectors"
 								}
 
 							}

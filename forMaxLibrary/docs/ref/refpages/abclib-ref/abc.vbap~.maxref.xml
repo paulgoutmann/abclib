@@ -5,7 +5,7 @@
 
 <c74object name="abc.vbap~" module="abclib">
   <digest>Abclib's circular VBAP spatialization with irregular angles</digest>
-  <description><o>abc.vbap~</o>object provide implementations of VBAP algorithm  by Ville Pulkki for various number of loudspeakers dispatched on a circle with angles that can be irregular.<br /><br />
+  <description><o>abc.vbap~</o>object provides implementations of VBAP algorithm  by Ville Pulkki for various number of loudspeakers dispatched on a circle with angles that can be irregular.<br /><br />
   Angles are given by parameters a0, a1, a2... angles (in degrees). theta is the angle of the virtual source (in degrees).</description>
 
   <!--INLETS-->
