@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 964.0, 758.0 ],
+		"rect" : [ 34.0, 100.0, 964.0, 758.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 964.0, 732.0 ],
+						"rect" : [ 0.0, 26.0, 964.0, 732.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -150,6 +150,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "@text", "abc.hoa.delay~ object in 'fx' mode apply delays to spatial components already created by encoders or maps for instance." ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-2",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "abc.help.description.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 6.0, 62.0, 650.0, 25.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgmode" : 0,
 									"border" : 1,
 									"clickthrough" : 0,
@@ -163,7 +184,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 41.0, 347.5, 150.0, 150.0 ],
+									"patching_rect" : [ 41.0, 347.0, 150.0, 150.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -204,7 +225,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 654.0, 23.0, 106.0, 22.0 ],
+									"patching_rect" : [ 670.0, 62.0, 106.0, 22.0 ],
 									"text" : "r -------commentbg"
 								}
 
@@ -217,7 +238,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 535.0, 55.0, 412.0, 74.0 ],
+									"patching_rect" : [ 551.0, 94.0, 412.0, 74.0 ],
 									"text" : "@deltime [2., 10000.] sets the maximum delay in milliseconds \n@feedback [0., 0.999] sets the feedback of the delays\n@window [10., 1000.] sets the duration of interpolation in milliseconds for changing delays \n@mode [syn/fx] sets the mode of processes"
 								}
 
@@ -231,29 +252,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 535.0, 138.0, 358.0, 87.0 ],
+									"patching_rect" : [ 551.0, 177.0, 358.0, 87.0 ],
 									"text" : "If we are at order N in ambisonics, the number of spatial components is P = 2*N+1.\n\nThe P delays are equally spread between deltime/N and deltime which the maximum delay in milliseconds (H0 => deltime/N, H-1 & H1 => 2*deltime/N, etc., H-N & HN => deltime)."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "@text", "abc.hoa.delay~ object in 'fx' mode apply delays to spatial components already created by encoders or maps for instance." ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-2",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "abc.help.description.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 8.0, 63.0, 483.0, 34.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -285,7 +285,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 463.0, 244.0, 219.0, 22.0 ],
+									"patching_rect" : [ 464.0, 271.0, 219.0, 22.0 ],
 									"text" : "abc.drops~ @dropperiod 400 @qf 100"
 								}
 
@@ -425,7 +425,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 463.0, 378.0, 90.0, 22.0 ],
+									"patching_rect" : [ 464.0, 398.0, 90.0, 22.0 ],
 									"text" : "mc.combine~ 2"
 								}
 
@@ -459,7 +459,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 665.0, 382.0, 81.0, 22.0 ],
+									"patching_rect" : [ 666.0, 402.0, 81.0, 22.0 ],
 									"text" : "abc.poltocar~"
 								}
 
@@ -471,7 +471,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
-									"patching_rect" : [ 665.0, 411.0, 74.0, 22.0 ],
+									"patching_rect" : [ 666.0, 431.0, 74.0, 22.0 ],
 									"text" : "mc.unpack~"
 								}
 
@@ -482,7 +482,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 665.0, 440.0, 74.0, 63.0 ]
+									"patching_rect" : [ 666.0, 460.0, 74.0, 63.0 ]
 								}
 
 							}
@@ -494,7 +494,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 486.0, 650.0, 91.0, 32.0 ]
+									"patching_rect" : [ 485.5, 656.0, 91.0, 32.0 ]
 								}
 
 							}
@@ -574,7 +574,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 535.0, 280.0, 50.0, 22.0 ]
+									"patching_rect" : [ 536.0, 300.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -586,7 +586,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 535.0, 247.0, 73.0, 22.0 ],
+									"patching_rect" : [ 536.0, 267.0, 73.0, 22.0 ],
 									"text" : "loadmess 2."
 								}
 
@@ -598,7 +598,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 535.0, 310.0, 46.0, 22.0 ],
+									"patching_rect" : [ 536.0, 330.0, 46.0, 22.0 ],
 									"text" : "freq $1"
 								}
 
@@ -620,7 +620,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 560.0, 494.0, 75.0, 110.0 ],
+									"patching_rect" : [ 560.0, 507.0, 75.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -643,7 +643,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 464.0, 612.0, 115.0, 22.0 ],
+									"patching_rect" : [ 464.0, 625.0, 115.0, 22.0 ],
 									"text" : "abc.hoa.decoder~ 3"
 								}
 
@@ -657,7 +657,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 591.0, 422.0, 61.0, 22.0 ],
+									"patching_rect" : [ 592.0, 442.0, 61.0, 22.0 ],
 									"text" : "r fx_delay",
 									"textcolor" : [ 0.996078431372549, 0.984313725490196, 0.984313725490196, 1.0 ]
 								}
@@ -672,7 +672,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 464.0, 459.0, 192.0, 24.0 ],
+									"patching_rect" : [ 465.0, 479.0, 192.0, 24.0 ],
 									"text" : "abc.hoa.delay~ 3 @mode fx"
 								}
 
@@ -687,7 +687,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 464.0, 405.0, 104.0, 35.0 ],
+									"patching_rect" : [ 465.0, 425.0, 104.0, 35.0 ],
 									"text" : "abc.hoa.map~ 3 @sources 1"
 								}
 
@@ -699,7 +699,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 535.0, 340.0, 196.0, 22.0 ],
+									"patching_rect" : [ 536.0, 360.0, 196.0, 22.0 ],
 									"text" : "abc.trajectories~ @mode random"
 								}
 
@@ -1314,7 +1314,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 544.5, 371.5, 674.5, 371.5 ],
+									"midpoints" : [ 545.5, 391.5, 675.5, 391.5 ],
 									"order" : 0,
 									"source" : [ "obj-69", 0 ]
 								}
@@ -1338,7 +1338,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-72", 1 ],
-									"midpoints" : [ 600.5, 451.0, 646.5, 451.0 ],
+									"midpoints" : [ 601.5, 471.0, 647.5, 471.0 ],
 									"source" : [ "obj-71", 0 ]
 								}
 
@@ -1353,7 +1353,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 473.5, 642.0, 495.5, 642.0 ],
+									"midpoints" : [ 473.5, 649.0, 495.0, 649.0 ],
 									"order" : 0,
 									"source" : [ "obj-76", 0 ]
 								}
@@ -1385,7 +1385,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-69", 0 ],
-									"midpoints" : [ 544.5, 327.0, 544.5, 327.0 ],
+									"midpoints" : [ 545.5, 347.0, 545.5, 347.0 ],
 									"source" : [ "obj-82", 0 ]
 								}
 
@@ -1422,7 +1422,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 964.0, 732.0 ],
+						"rect" : [ 34.0, 126.0, 964.0, 732.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1516,7 +1516,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.delay~ object in 'syn' mode generate spatial delayed components in ambisonic from one mono signal." ],
+									"args" : [ "@text", "abc.hoa.delay~ object in 'syn' mode generate spatial delayed components in from one mono signal." ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1530,7 +1530,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.5, 62.0, 486.0, 36.0 ],
+									"patching_rect" : [ 5.5, 62.0, 542.5, 27.0 ],
 									"viewvisibility" : 1
 								}
 
