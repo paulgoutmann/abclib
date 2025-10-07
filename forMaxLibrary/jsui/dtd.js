@@ -6,7 +6,7 @@ mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0; 
 
-var myDelays = [], channels = 7, functiontype = 0, delayHittedBefore=0, bgcolor = [0.118, 0.118, 0.118, 1], bordercolor = [0.502, 0.502, 0.502, 1], bordersize = 2, factor = 0, thickness = 1, radius = 10, width = this.box.rect[2] - this.box.rect[0], height = this.box.rect[3] - this.box.rect[1], width_utill, onset = 110, offset = 50, delay = 1000, delayHitted = 0, i; 
+var myDelays = [], channels = 7, functiontype = 0, delayHittedBefore=0, bgcolor = [0.118, 0.118, 0.118, 1], bordercolor = [0.502, 0.502, 0.502, 1], bordersize = 2, factor = 0, thickness = 1, radius = 10, width = this.box.rect[2] - this.box.rect[0], height = this.box.rect[3] - this.box.rect[1], width_utill, onset = 110, offset = 50, delay = 48000, delayHitted = 0, i; 
 
 declareattribute("functiontype", null, "set_functiontype", 1);
 declareattribute("factor", null, "set_factor", 1);
@@ -137,7 +137,7 @@ var s1, s2, count, del, gain;
  	        s1 = "delay" + String(count);
             s2 = "gain" + String(count);
     //NEED TO BE OPTIMIZED BECAUSE WE MAKE THE CALCULUS MULTIPLE TIME
- 	del = myDelays[i].position[0] > (1-factor) ? (delay*Math.floor(myDelays[i].position[0] * 1000)/1000) : 0 ;
+ 	del = myDelays[i].position[0] > (1-factor) ? (Math.floor(delay*myDelays[i].position[0])) : 0 ;
     gain = Math.floor((1 - myDelays[i].position[1])*2000)/1000;
 
 	outlet(0, s1, del) ;
@@ -163,7 +163,7 @@ function paint(){
 		set_font_size(10.);
 		set_source_rgba(0.831, 0.161, 0.173, 1.0)
 		move_to(10, 10);
-		show_text("delay (ms)");
+		show_text("delay (smpl)");
 		stroke();	
 			
 		for(i=0; i<channels; i++){
@@ -197,7 +197,7 @@ function paint(){
             }else{
                 move_to(50, (height-((i-10)*11) - 5))
             }
-			var str2 = (i+1)+" : "+( Math.floor( myDelays[i].position[0] * delay  * factor));
+			var str2 = (i+1)+" : "+(Math.floor( myDelays[i].position[0] * delay  * factor));
 			show_text(str2);
 			stroke();
 			
