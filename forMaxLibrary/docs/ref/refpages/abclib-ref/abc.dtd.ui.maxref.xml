@@ -51,10 +51,10 @@
 
         <method name="delay">
       <arglist>
-        <arg type="float" />
+        <arg type="int" />
       </arglist>
-      <description>sets the maximum delay time in ms. [init=0.:min=0.:max=5400.].</description>
-      <digest>sets the maximum delay time in ms</digest>
+      <description>sets the maximum delay time in sample. [init=48000:min=10:max=262144].</description>
+      <digest>sets the maximum delay time in sample</digest>
     </method>
   
 
