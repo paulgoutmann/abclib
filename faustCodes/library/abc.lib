@@ -437,15 +437,14 @@ abc_2d_syn_decorrelation_ui(N) = synDecorrelation(N, delay, winfreq, factor, fdb
 abc_2d_man_decorrelation_ui(N) = thisManDecorrelation 
 with {
         P = 2*N+1;
-        fd(i) = hslider("v:synfxdelay/feedback%i", 0, 0, 1, 0.001) :  si.smoo;
-		d(i) = hslider("v:synfxdelay/delay%i [unit:msec]", (i/P)*1000, 0, 1000, 0.01);
+        //fd(i) = hslider("v:synfxdelay/feedback%i", 0, 0, 1, 0.001) :  si.smoo;
+		fdbk = hslider("v:synfxdecorrelation/fdbk", 0, 0, 0.999, 0.001);
+		d(i) = hslider("v:synfxdecorrelation/delay%i [unit:samples]", int((i+1)/P*48000), 10, 262144, 1);
         winfreq = 1000. / 10;
-        //ms to smpl//
-        durToSamp(x) = int(x * 0.001 * ma.SR);
 		//list of delays//
- 		ld = par(i, P, durToSamp(d(i)));
+ 		ld = par(i, P, d(i));
         //list of feedbacks
-        lf = par(i, P, fd(i));
+        lf = par(i, P, fdbk);
         thisManDecorrelation = fxDelay(N, ld, winfreq, lf) : abc_2d_fx_gain_ui(N);
     };
 //
