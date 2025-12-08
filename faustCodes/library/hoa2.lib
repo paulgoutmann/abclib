@@ -686,21 +686,24 @@ with {
 //
 // * `N`: the ambisonic order (constant numerical expression)
 // * `rt` : refreshment time in milliseconds
+// * 'normalize' : applying normalization (1) or not (0)
 //-----------------------------
-scope(N, rt) = thisScope
+scope(N, rt, normalize) = thisScope
 with {
     //Angle sweeping at a speed corresponding to refresh period between 0 and 2*PI
     theta = os.phasor(1, 1/rt) * 2 * ma.PI;
     //we get the vector of harmonic functions thanks to the encoding function//
-    harmonicsVector = encoder(N, 1, theta);
+    harmonicsVector = ho.encoder(N, 1, theta);
+	//
+	nn = (normalize == 1);
     //
-    normalizedVector(N) = si.bus(N) <: (si.bus(N), norm) : ro.interleave(N, 2) : par(i, N, /)
+    normalizedVector(N, cmp) = si.bus(N) <: (si.bus(N), norm) : ro.interleave(N, 2) : par(i, N, /)
     with {
-        norm = par(i, N, _ <:(_,_) : *) :> _ : sqrt <: ((_ == 0), (_ > 0), _) : (_,*) : + <: si.bus(N);
+        norm = par(i, N, _ <:(_,_) : *) :> *(cmp) : +(1-cmp) : sqrt <: ((_ == 0), (_ > 0), _) : (_,*) : + <: si.bus(N);
     };
     //building (2N+1) normalized vectors
-    inputVector = (*(0.5), par(i, (2*N), _)) : normalizedVector(2*N+1);
-    normalizedHarmonics = harmonicsVector : normalizedVector(2*N+1);
+    inputVector = (*(0.5), par(i, (2*N), _)) : normalizedVector(2*N+1, nn);
+    normalizedHarmonics = harmonicsVector : normalizedVector(2*N+1, nn);
     //
     rho = (inputVector, normalizedHarmonics) : si.dot(2*N+1) ;
     thisScope = (rho <: (ma.fabs, (_ >= 0))) : ((_ <: (_,_)), _) : (*(sin(theta)), *(cos(theta)), _) : (*(-1), _,_);
