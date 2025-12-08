@@ -1462,6 +1462,27 @@ with{
 thisVectorVE3D = si.bus(p) <: si.bus(p), (parSquare(p)<:si.bus(p), (simpleSum(p):zeroException)), (simpleSum(p):zeroException) <: vx(p), vy(p), vz(p) : route(6,6, 1, 1, 2, 4, 3, 2, 4, 5, 5, 3, 6, 6);
 };
 
+//----------------`(ho.)wider3D`-------------------------
+// Can be used to wide the diffusion of a localized sound. The order
+// depending signals are weighted and appear in a pow way to
+// have linear changes.
+//
+// #### Usage
+//
+// ```
+// _ : wider3D(N,w) : _
+// ```
+//
+// Where:
+//
+// * `N`: the ambisonic order (constant numerical expression)
+// * `w`: the width value between 0 - 1
+wider3D(N, w) = par(l, N+1, processDegree(l))
+with {
+    nharmo(l) = 2 * l + 1;
+    coeff(l) = pow(w, l) * ((1 - w) * (N - l) + 1);
+    processDegree(l) = par(j, nharmo(l), _ * coeff(l));
+};
 
 //-------`(ho.)fxDecorrelation3D`----------
 // Spatial ambisonic decorrelation in fx mode.
