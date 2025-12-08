@@ -292,6 +292,11 @@ abc_2d_wider_ui(N) = wider(N, width)
 		with {
 			width = hslider("width", 0, 0, 1, 0.01) : si. smoo;
 };
+
+abc_3d_wider_ui(N) = wider3D(N, width)
+		with {
+			width = hslider("width", 0, 0, 1, 0.01) : si. smoo;
+};
 //
 //--------------------------------------------------------------------------------------//
 //SCOPE OBJECTS FOR AMBISONIC VIZUALISATION USING XY SCOPE OBJECTS
