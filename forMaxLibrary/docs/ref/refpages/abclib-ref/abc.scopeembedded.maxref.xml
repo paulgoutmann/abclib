@@ -47,7 +47,7 @@
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>[ONLY IN INSPECTOR] type of drawing (line_strip or points)</description>
+      <description>type of drawing (line_strip or points)</description>
       <digest>type of drawing (line_strip or points).</digest>
     </method>
 
@@ -55,8 +55,40 @@
       <arglist>
         <arg type="float" />
       </arglist>
-      <description>[ONLY IN INSPECTOR] size of the drawing.</description>
+      <description>size of the drawing.</description>
       <digest>size of the drawing.</digest>
+    </method>
+
+      <method name="color-bg">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>color of the background.</description>
+      <digest>color of the background.</digest>
+    </method>
+
+    <method name="color-pos">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>color of positive values.</description>
+      <digest>color of positive values.</digest>
+    </method>
+
+    <method name="color-neg">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>color of negative values.</description>
+      <digest>color of negative values.</digest>
+    </method>
+
+    <method name="color-circ">
+      <arglist>
+        <arg type="float" />
+      </arglist>
+      <description>color of the circles.</description>
+      <digest>color of the circles.</digest>
     </method>
   </methodlist>
 
