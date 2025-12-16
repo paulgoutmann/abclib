@@ -305,7 +305,7 @@ abc_3d_wider_ui(N) = wider3D(N, width)
 abc_2d_scope_ui(N) = scope(N, refresh, normalize)
 with {
 	refresh = hslider("v:scope/refresh [unit:msec]", 10, 1, 2000, 1) * 0.001;
-	normalize = checkbox("v:scope/normalize"); 
+	normalize = hslider("v:scope/normalize", 1, 0, 1, 1); 
 };
 
 
