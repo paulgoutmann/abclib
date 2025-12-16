@@ -45,9 +45,13 @@
       </attribute>-->
 
     <attribute name="refresh" type="int" set="1" get="1" size="1">
-      <description>sets the refresh time in ms for the visualization [init=10:min=1:max=2000:step=1].<br /><br />
-        </description>
+      <description>sets the refresh time in ms for the visualization [init=10:min=1:max=2000:step=1].</description>
       <digest>sets the refresh time in ms</digest>
+    </attribute>
+
+    <attribute name="normalize" type="boolean" set="1" get="1" size="1">
+      <description>normalization of the visualization (1 = activated, 0 = deactivated).</description>
+      <digest>normalization of the visualization</digest>
     </attribute>
   </attributelist>
 
@@ -57,9 +61,16 @@
       <arglist>
         <arg type="int" />
       </arglist>
-      <description>sets the refresh time in ms for the visualization [init=10:min=1:max=2000:step=1].<br /><br />
-        </description>
+      <description>sets the refresh time in ms for the visualization [init=10:min=1:max=2000:step=1].</description>
       <digest>sets the refresh time in ms</digest>
+    </method>
+
+    <method name="normalize">
+      <arglist>
+        <arg type="int" />
+      </arglist>
+      <description>normalization of the visualization (1 = activated, 0 = deactivated).</description>
+      <digest>normalization of the visualization</digest>
     </method>
   </methodlist>
 

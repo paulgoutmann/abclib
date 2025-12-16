@@ -38,10 +38,10 @@
 
   <!--ATTRIBUTES-->
   <attributelist>
-      <!--<attribute name="dimensions" type="int" set="1" get="1" size="1">
+      <attribute name="dimensions" type="int" set="1" get="1" size="1">
         <description>sets the number of dimensions [init=2:min=2:max=3:step=1].</description>
         <digest>sets the number of dimensions</digest>
-      </attribute>-->
+      </attribute>
 
     <attribute name="width" type="float" set="1" get="1" size="1"> 
       <description>sets the width variable of the soundfield [init=0:min=0:max=1:step=0.01].<br /><br /></description>
