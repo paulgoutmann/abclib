@@ -5,7 +5,7 @@
 
 <c74object name="abc.hoa.optim~" module="abclib">
   <digest>Abclib's High Order Ambisonics (HOA) Optimizations</digest>
-  <description><o>abc.hoa.optim~</o> is an High Order Ambisonics (HOA) optimization process. This objects enable to apply optimizations to the sound field with 3 levels (depending on optimtype value). It provides solutions when having an audience that cannot be considered as staying in the center of the ambisonic circle.<br /><br />
+  <description><o>abc.hoa.optim~</o> is an High Order Ambisonics (HOA) optimization process. This object enables to apply optimizations to the sound field with 3 levels (depending on optimtype value). It provides solutions when having an audience that cannot be considered as staying in the center of the ambisonic circle.<br /><br />
       -basic (0) has no effect;<br />
       -maxRe (1) optimization is used when the audience is confined to the center of the circle;<br />
       -inPhase (2) optimization is used when the audience covers all the circle.

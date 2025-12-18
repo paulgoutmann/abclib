@@ -17,7 +17,8 @@ patching();
 function patching() {
 	//Constants:
 	var baseAmbisonicOrder = 1;
-	var maxAmbisonicOrder = 7;
+	var max2dAmbisonicOrder = 7;
+	var max3dAmbisonicOrder = 3;
 	var maxSpeakers = 16;
 	var maxMCinstances = 16;
 	var maxMAPsources = 8;
@@ -34,19 +35,37 @@ function patching() {
 	var isHOA = (new RegExp("abc.hoa", "i").test(patcherName));//||(new RegExp("abc_3d", "i").test(jsobjectname));
 	var isMC = (new RegExp("abc.mc", "i").test(patcherName));
 
-	if (typeof args[1] === 'number' && args[1] != 0) {
-		order = args[1];//Max puts a zero when there are no arguments
-		if (order > maxAmbisonicOrder && isHOA == 1) {//We check if is an HOA object
-			error("abcWrapper => ", "The maximum HOA order is", maxAmbisonicOrder, ". Replacing", order, "by", maxAmbisonicOrder, ".");
-			order = maxAmbisonicOrder;
-		}
-	}
-
 	var speakers;
 	var dimensions = "2d";
 	var sources = 1;//To transform the encoder to multiencoder
 	var mode = "fx";//fx or syn
 	var finalchannels;//variable to save the number of channels of the MC objects, if the user inputs instances or order instead of channels it will still work and we will save the value on this variable.
+
+	if (typeof args[1] === 'number' && args[1] != 0) {
+		if (isHOA == 1) {
+			order = args[1];//Max puts a zero when there are no arguments
+			if (order > max2dAmbisonicOrder && dimensions == '2d') {//We check if is an 2D HOA object
+			error("abcWrapper => ", "The maximum HOA order is", max2dAmbisonicOrder, ". Replacing", order, "by", max2dAmbisonicOrder, ".");
+			order = max2dAmbisonicOrder;
+			} else if (order > max3dAmbisonicOrder && dimensions == '3d') {//We check if is an 3D HOA object
+			error("abcWrapper => ", "The maximum HOA order is", max3dAmbisonicOrder, ". Replacing", order, "by", max3dAmbisonicOrder, ".");
+			order = max3dAmbisonicOrder;
+			}
+		} else if (isMC == 1) {
+			instances = args[1];
+			if (instances > maxMCinstances) {
+			error("abcWrapper => ", "The maximum MC instances is", maxMCinstances, ". Replacing", instances, "by", maxMCinstances, ".");
+			instances = maxMCinstances;
+			}
+		} else {
+			order = args[1];//Warning: many objects use "order" to set number of channels (e.g. vbap/vector) even its not ambisonics. We need to adress this feature in futur. 
+			if (order > maxMCinstances){
+			error("abcWrapper => ", "The maximum number of MC channels is", maxMCinstances, ". Replacing", channels, "by", maxMCinstances, ".");
+			order = maxMCinstances;
+			}
+		}
+	}
+
 	for (var i = 1; i < args.length; i++) {
 		if (args[i] == "@speakers" || args[i] == "@spk") {
 			speakers = args[i + 1];
@@ -96,8 +115,11 @@ function patching() {
 	//List of ABC delicious objects:
 	if (patcherName == 'abc.hoa.decoder~' || patcherName == 'abc.hoa.decoder') {
 		if (patcherName == 'abc.hoa.decoder') withUI = true;
-		if (speakersSettedUp == false) speakers = order * 2 + 2;
-
+		if (speakersSettedUp == false && dimensions == "2d") {
+			speakers = order * 2 + 2;
+		} else if (speakersSettedUp == false && dimensions == "3d") {
+			speakers = (order + 1) * (order + 1);
+		}
 		objectToInstantiate = "abc_" + dimensions + "_decoder" + order + "_" + speakers + "~";
 	} else if (patcherName == 'abc.hoa.binaural~' || patcherName == 'abc.hoa.binaural') {
 		if (patcherName == 'abc.hoa.binaural') withUI = true;
@@ -126,7 +148,16 @@ function patching() {
 		objectToInstantiate = "abc_" + dimensions + "_" + mode + "_ringmod" + order + "~";
 	} else if (patcherName == 'abc.mc.grain~' || patcherName == 'abc.hoa.grain') {
 		if (patcherName == 'abc.mc.grain') withUI = true;
-		objectToInstantiate = "abc_" + "grain" + order + "~";
+		if (instances) {
+			objectToInstantiate = "abc_" + "grain" + instances + "~";
+			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "grain" + channels + "~";
+			finalchannels = channels;
+		} else {
+			objectToInstantiate = "abc_" + "grain" + order + "~";
+			finalchannels = order;
+		}
 	} else if (patcherName == 'abc.hoa.grain~' || patcherName == 'abc.hoa.grain') {
 		if (patcherName == 'abc.hoa.grain') withUI = true;
 		objectToInstantiate = "abc_" + dimensions + "_" + mode + "_grain" + order + "~";
@@ -135,7 +166,16 @@ function patching() {
 		objectToInstantiate = "abc_" + dimensions + "_" + mode + "_delay" + order + "~";
 	} else if (patcherName == 'abc.mc.delay~' || patcherName == 'abc.mc.delay') {
 		if (patcherName == 'abc.mc.delay') withUI = true;
-		objectToInstantiate = "abc_" + "delay" + order + "~";
+				if (instances) {
+			objectToInstantiate = "abc_" + "delay" + instances + "~";
+			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "delay" + channels + "~";
+			finalchannels = channels;
+		} else {
+			objectToInstantiate = "abc_" + "delay" + order + "~";
+			finalchannels = order;
+		}
 	} else if (patcherName == 'abc.delaychain~' || patcherName == 'abc.delaychain') {
 		if (patcherName == 'abc.delaychain') withUI = true;
 		if (order == 1) order = 2;
@@ -196,18 +236,22 @@ function patching() {
 		if (instances) {
 			objectToInstantiate = "abc_" + "addsynth" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "addsynth" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "addsynth" + order + "~";
+			finalchannels = order;
 		}
 		signalData = false;
 	} else if (patcherName == 'abc.mc.busselect~' || patcherName == 'abc.mc.busselect') {
 		if (patcherName == 'abc.mc.busselect') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "busselect" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "busselect" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "busselect" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "busselect" + order + "~";
 			finalchannels = order;
@@ -218,12 +262,12 @@ function patching() {
 		signalData = false;
 	} else if (patcherName == 'abc.mc.busmult~' || patcherName == 'abc.mc.busmult') {
 		if (patcherName == 'abc.mc.busmult') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "busmult" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "busmult" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "busmult" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "busmult" + order + "~";
 			finalchannels = order;
@@ -231,12 +275,12 @@ function patching() {
 		controlData = false;
 	} else if (patcherName == 'abc.mc.busplus~' || patcherName == 'abc.mc.busplus') {
 		if (patcherName == 'abc.mc.busplus') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "busplus" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "busplus" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "busplus" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "busplus" + order + "~";
 			finalchannels = order;
@@ -248,22 +292,22 @@ function patching() {
 		controlData = false;
 	} else if (patcherName == 'abc.mc.chopan~' || patcherName == 'abc.mc.chopan') {
 		if (patcherName == 'abc.mc.chopan') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "chopan" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "chopan" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "chopan" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "chopan" + order + "~";
 			finalchannels = order;
 		}
 	} else if (patcherName == 'abc.mc.randenv~' || patcherName == 'abc.mc.randenv') {
 		if (patcherName == 'abc.mc.randenv') withUI = true;
-		if (channels) {
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			finalchannels = instances;
+		} else if (channels) {
+			finalchannels = channels;
 		} else {
 			finalchannels = order;
 		}
@@ -284,36 +328,36 @@ function patching() {
 		objectToInstantiate = "abc_" + "envfollower" + "~";
 	} else if (patcherName == 'abc.mc.flanger~' || patcherName == 'abc.mc.flanger') {
 		if (patcherName == 'abc.mc.flanger') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "flanger" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "flanger" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "flanger" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "flanger" + order + "~";
 			finalchannels = order;
 		}
 	} else if (patcherName == 'abc.mc.freqshift~' || patcherName == 'abc.mc.freqshift') {
 		if (patcherName == 'abc.mc.freqshift') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "freqshift" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "freqshift" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "freqshift" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "freqshift" + order + "~";
 			finalchannels = order;
 		}
 	} else if (patcherName == 'abc.mc.gain~' || patcherName == 'abc.mc.gain') {
 		if (patcherName == 'abc.mc.gain') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "gain" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "gain" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "gain" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "gain" + order + "~";
 			finalchannels = order;
@@ -324,12 +368,12 @@ function patching() {
 		signalData = false;
 	} else if (patcherName == 'abc.mc.harmo~' || patcherName == 'abc.mc.harmo') {
 		if (patcherName == 'abc.mc.harmo') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "harmo" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "harmo" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "harmo" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "harmo" + order + "~";
 			finalchannels = order;
@@ -349,14 +393,13 @@ function patching() {
 		objectToInstantiate = "abc_linedrive~";
 	} else if (patcherName == 'abc.mc.matrix~' || patcherName == 'abc.mc.matrix') {
 		if (patcherName == 'abc.mc.matrix') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "matrix" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "matrix" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "matrix" + channels + "~";
+			finalchannels = channels;
 		} else {
-			if (order == 1) order = 2;
 			objectToInstantiate = "abc_" + "matrix" + order + "~";
 			finalchannels = order;
 		}
@@ -366,12 +409,12 @@ function patching() {
 		controlData = false;
 	} else if (patcherName == 'abc.mc.multinoise~' || patcherName == 'abc.mc.multinoise') {
 		if (patcherName == 'abc.mc.multinoise') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "multinoise" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "multinoise" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "multinoise" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "multinoise" + order + "~";
 			finalchannels = order;
@@ -401,12 +444,12 @@ function patching() {
 		signalData = false;
 	} else if (patcherName == 'abc.mc.pulsedenv2synth~' || patcherName == 'abc.mc.pulsedenv2synth') {
 		if (patcherName == 'abc.mc.pulsedenv2synth') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "pulsedenv2synth" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "pulsedenv2synth" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "pulsedenv2synth" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "pulsedenv2synth" + order + "~";
 			finalchannels = order;
@@ -469,12 +512,12 @@ function patching() {
 		objectToInstantiate = "abc_" + "soundgrain" + "~";
 	} else if (patcherName == 'abc.mc.substractsynth~' || patcherName == 'abc.mc.substractsynth') {
 		if (patcherName == 'abc.mc.substractsynth') withUI = true;
-		if (channels) {
-			objectToInstantiate = "abc_" + "substractsynth" + channels + "~";
-			finalchannels = channels;
-		} else if (instances) {
+		if (instances) {
 			objectToInstantiate = "abc_" + "substractsynth" + instances + "~";
 			finalchannels = instances;
+		} else if (channels) {
+			objectToInstantiate = "abc_" + "substractsynth" + channels + "~";
+			finalchannels = channels;
 		} else {
 			objectToInstantiate = "abc_" + "substractsynth" + order + "~";
 			finalchannels = order;

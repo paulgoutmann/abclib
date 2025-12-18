@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 967.0, 707.0 ],
+		"rect" : [ 35.0, 100.0, 967.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -939,7 +939,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.238108666666562, 524.0, 45.0, 45.0 ]
+									"patching_rect" : [ 151.238108666666562, 557.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1032,13 +1032,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-76",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 6.0, 522.0, 134.0, 49.0 ],
-									"text" : "abc.hoa.decoder~ 3 @dimensions 3 @mode binaural"
+									"patching_rect" : [ 6.0, 522.0, 200.0, 22.0 ],
+									"text" : "abc.hoa.binaural~ 3 @dimensions 3"
 								}
 
 							}
@@ -1246,7 +1245,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 681.0 ],
+						"rect" : [ 35.0, 126.0, 967.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1398,7 +1397,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objetcs in 'man' mode apply decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by the GUI abc.dtd.ui. " ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ objetc in 'man' mode applies decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by the GUI abc.dtd.ui. " ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1445,6 +1444,8 @@
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "number",
+									"maximum" : 36,
+									"minimum" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -1484,8 +1485,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 471.0, 121.0, 90.0, 22.0 ],
-									"text" : "loadmess 1000"
+									"patching_rect" : [ 463.0, 120.0, 97.0, 22.0 ],
+									"text" : "loadmess 48000"
 								}
 
 							}
@@ -1494,11 +1495,13 @@
 									"format" : 6,
 									"id" : "obj-33",
 									"maxclass" : "flonum",
+									"maximum" : 48000.0,
+									"minimum" : 0.0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 471.0, 147.0, 50.0, 22.0 ]
+									"patching_rect" : [ 463.0, 146.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1509,7 +1512,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 471.0, 175.0, 54.0, 22.0 ],
+									"patching_rect" : [ 463.0, 174.0, 54.0, 22.0 ],
 									"text" : "delay $1"
 								}
 
@@ -1545,6 +1548,8 @@
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "number",
+									"maximum" : 21,
+									"minimum" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -1883,7 +1888,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 480.5, 201.5, 258.5, 201.5 ],
+									"midpoints" : [ 472.5, 201.5, 258.5, 201.5 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -2375,7 +2380,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 296.0, 188.0, 50.0, 22.0 ],
-													"text" : "292."
+													"text" : "598.666667"
 												}
 
 											}
@@ -5572,7 +5577,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objects in 'fx' mode apply decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1. " ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ object in 'fx' mode applies decorrelation to spatial components already created by encoders or maps for instance.  Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1. " ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -6252,7 +6257,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 967.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6296,7 +6301,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.decorrelation~ objects in 'syn' mode generate spatial decorrelated components from one mono signal at a given ambisonic order N. Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1." ],
+									"args" : [ "@text", "abc.hoa.decorrelation~ object in 'syn' mode generates spatial decorrelated components from one mono signal at a given ambisonic order N. Each spatial component is delayed and the delay lines are driven by a 'factor' parameter between 0 and 1." ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -7286,6 +7291,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "abc.hoa.binaural~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "abc.hoa.decoder~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/abclib/patchers",
 				"patcherrelativepath" : "../patchers",
@@ -7409,7 +7421,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "abc_3d_decoder3_8~.mxo",
+				"name" : "abc_3d_binaural3~.mxo",
 				"type" : "iLaX"
 			}
 , 			{

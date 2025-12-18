@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 743.0, 671.0 ],
+		"rect" : [ 34.0, 100.0, 743.0, 671.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -225,7 +225,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.5, 62.0, 488.0, 94.0 ],
+									"patching_rect" : [ 6.5, 62.0, 677.0, 105.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -324,7 +324,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-9",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -555,7 +554,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 743.0, 645.0 ],
+						"rect" : [ 34.0, 126.0, 743.0, 645.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -661,7 +660,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.5, 62.0, 488.0, 94.0 ],
+									"patching_rect" : [ 6.5, 62.0, 681.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 

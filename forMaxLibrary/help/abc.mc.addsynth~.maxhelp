@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 839.0, 699.0 ],
+		"rect" : [ 34.0, 100.0, 839.0, 699.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 839.0, 673.0 ],
+						"rect" : [ 34.0, 126.0, 839.0, 673.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -377,8 +377,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 374.0, 263.0, 100.0, 223.0 ],
-									"text" : ";\rs11 f0 440;\rs11 fmult0 0.56;\rs11 fmult1 0.56;\rs11 fmult2 0.92;\rs11 fmult3 0.92;\rs11 fmult4 1.19;\rs11 fmult5 1.7;\rs11 fmult6 2.;\rs11 fmult7 2.74;\rs11 fmult8 3.;\rs11 fmult9 3.76;\rs11 fmult10 4.07;\rs11 fbeat1 1.;\rs11 fbeat3 1.7;\r"
+									"patching_rect" : [ 374.0, 263.0, 120.0, 223.0 ],
+									"text" : ";\rs-risset f0 440;\rs-risset fmult0 0.56;\rs-risset fmult1 0.56;\rs-risset fmult2 0.92;\rs-risset fmult3 0.92;\rs-risset fmult4 1.19;\rs-risset fmult5 1.7;\rs-risset fmult6 2.;\rs-risset fmult7 2.74;\rs-risset fmult8 3.;\rs-risset fmult9 3.76;\rs-risset fmult10 4.07;\rs-risset fbeat1 1.;\rs-risset fbeat3 1.7;\r"
 								}
 
 							}
@@ -412,8 +412,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 117.0, 263.0, 34.0, 22.0 ],
-									"text" : "r s11"
+									"patching_rect" : [ 117.0, 263.0, 54.0, 22.0 ],
+									"text" : "r s-risset"
 								}
 
 							}
@@ -730,7 +730,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-48",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -743,7 +742,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-46",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -756,7 +754,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-43",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -1440,7 +1437,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 839.0, 673.0 ],
+						"rect" : [ 0.0, 26.0, 839.0, 673.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

@@ -5,7 +5,7 @@
 
 <c74object name="abc.sounddetector~" module="abclib">
   <digest>Abclib's sound detector</digest>
-  <description><o>abc.sounddetector~</o> abc.sounddetector~ provides the detection of attacks and releases of incoming sound. Its first outlet is an on-off envelope. The second outlet provides a binary signal of detection of the attack. The third outlet provides a binary signal of detection of the release.<br /><br /></description>
+  <description><o>abc.sounddetector~</o> provides the detection of attacks and releases of incoming sound. Its first outlet is an on-off envelope. The second outlet provides a binary signal of detection of the attack. The third outlet provides a binary signal of detection of the release.<br /><br /></description>
 
   <!--INLETS-->
   <!-- <inletlist>

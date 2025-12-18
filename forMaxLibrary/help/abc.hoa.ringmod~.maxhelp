@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 156.0, 118.0, 766.0, 670.0 ],
+		"rect" : [ 34.0, 100.0, 766.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -176,7 +176,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 61.0, 484.0, 63.0 ],
+									"patching_rect" : [ 7.0, 61.0, 499.0, 64.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -697,7 +697,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "@text", "The 'functiontype' parameter gives the possibility to choose how the delays are spread between the spatial components with 22 types. This example shows the frequency of modulators applyied to each component at the third order (2D) for the first six distribution types when the user controls the factor and the f0 parameter. " ],
+									"args" : [ "@text", "The 'functiontype' parameter gives the possibility to choose how the delays are spread between the spatial components with 22 types. This example shows the frequency of modulators applied to each component at the third order (2D) for the first six distribution types when the user controls the factor and the f0 parameter. " ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1012,7 +1012,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 296.0, 188.0, 50.0, 22.0 ],
-													"text" : "10.2"
+													"text" : "13.466667"
 												}
 
 											}
@@ -4079,7 +4079,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 156.0, 144.0, 766.0, 644.0 ],
+						"rect" : [ 34.0, 126.0, 766.0, 644.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4125,7 +4125,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.ringmod~ object in syn mode generate spatial components in ambisonic from one mono signal at a given ambisonic order N. Each spatial component is modulates and the frequency of the modulators are driven by a 'factor' parameter." ],
+									"args" : [ "@text", "abc.hoa.ringmod~ object in syn mode generate spatial components in ambisonic from one mono signal at a given ambisonic order N. Each spatial component is modulated and the frequency of the modulators are driven by a 'factor' parameter." ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -5048,7 +5048,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@text", "abc.hoa.ringmod~ object in fx mode apply ring modulation to spatial components already created by encoders or maps for instance at a given ambisonic order N. Each spatial component is modulates and the frequency of the modulators are driven by a 'factor' parameter." ],
+									"args" : [ "@text", "abc.hoa.ringmod~ object in fx mode apply ring modulation to spatial components already created by encoders or maps for instance at a given ambisonic order N. Each spatial component is modulated and the frequency of the modulators are driven by a 'factor' parameter." ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,

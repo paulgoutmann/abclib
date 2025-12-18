@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 100.0, 839.0, 778.0 ],
+		"rect" : [ 34.0, 100.0, 839.0, 778.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 839.0, 752.0 ],
+						"rect" : [ 34.0, 126.0, 839.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -345,7 +345,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-24",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -460,7 +459,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 76.0, 291.0, 90.0, 35.0 ],
-									"text" : "f0 550"
+									"text" : "f0 330"
 								}
 
 							}
@@ -695,7 +694,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-66",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -707,7 +705,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-39",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -720,7 +717,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-37",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -833,7 +829,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 515.0, 432.0, 93.0, 196.0 ],
-									"text" : ";\rdels dur0 1.;\rdels fdbk0 0.2;\rdels gain0 0.;\rdels dur1 1.5;\rdels fdbk1 0.4;\rdels gain1 -3.;\rdels dur2 2.;\rdels fdbk2 0.6;\rdels gain2 -6.;\rdels dur3 2.5;\rdels fdbk3 0.8;\rdels gain3 -9.;\r"
+									"text" : ";\rdels4 dur0 1.;\rdels4 fdbk0 0.2;\rdels4 gain0 0.;\rdels4 dur1 1.5;\rdels4 fdbk1 0.4;\rdels4 gain1 -3.;\rdels4 dur2 2.;\rdels4 fdbk2 0.6;\rdels4 gain2 -6.;\rdels4 dur3 2.5;\rdels4 fdbk3 0.8;\rdels4 gain3 -9.;\r"
 								}
 
 							}
@@ -845,14 +841,13 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 195.0, 465.0, 38.0, 22.0 ],
-									"text" : "r dels"
+									"patching_rect" : [ 195.0, 465.0, 45.0, 22.0 ],
+									"text" : "r dels4"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-44",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1181,7 +1176,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 126.0, 839.0, 752.0 ],
+						"rect" : [ 0.0, 26.0, 839.0, 752.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1566,7 +1561,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-68",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1578,7 +1572,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-65",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1757,7 +1750,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-24",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -1794,7 +1786,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-18",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1806,7 +1797,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"id" : "obj-17",
 									"maxclass" : "comment",
 									"numinlets" : 1,

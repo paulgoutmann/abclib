@@ -27,3 +27,6 @@ function changeCommentBgColor() {
 function loadbang(){
 changeCommentBgColor();
 }
+
+function anything() {
+}
